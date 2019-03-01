@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -116,7 +116,7 @@ var Header = function Header() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    class: "fas fa-igloo fa-spin",
+    class: "fas fa-igloo icon-spin",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 3
@@ -254,7 +254,7 @@ function (_Component) {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.7.2/css/all.css",
         integrity: "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr",
-        crossorigin: "anonymous",
+        crossOrigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 44
@@ -337,7 +337,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/works/",
+        href: "/work/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 62
@@ -349,7 +349,7 @@ function (_Component) {
           lineNumber: 63
         },
         __self: this
-      }, "Works"))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_9__["NavItem"], {
+      }, "Work"))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_9__["NavItem"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 68
@@ -1651,7 +1651,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
