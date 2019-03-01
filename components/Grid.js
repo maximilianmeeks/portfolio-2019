@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Grid = ({ entries, type, pageImage }) => (
   <div>
     <ul>
-      {entries.map(entry =>
+{/*       {entries.map(entry =>
         <li key={entry.id}>
           <div>
             <Link href={`/${type}/details?slug=${entry.slug}&type=${type}`} as={`/${type}/${entry.slug}`} >
@@ -14,7 +14,7 @@ const Grid = ({ entries, type, pageImage }) => (
             </Link>
           </div>
         </li>
-      )}
+      )} */}
     </ul>
 
     <style jsx>{`
