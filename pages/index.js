@@ -3,7 +3,6 @@ import React from "react";
 import Layout from "../components/layout";
 
 const Index = () => (
-    <div>
         <Layout>
         <p>
             Welcome to my portfolio! This is designed with Next.js!
@@ -14,9 +13,7 @@ const Index = () => (
             to get more information.
         </p>
         </Layout>
-    </div>
-        
-
+    
 )
 
 export default Index
