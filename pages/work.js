@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React, { Component } from "react";
 import { graphql, Query } from 'react-apollo';
-import { Container, Card } from "reactstrap";
+import { Container, Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Row, Col } from "reactstrap";
 import Layout from "../components/layout";
 import gql from 'graphql-tag';
 import withData from "../lib/withData";
@@ -12,54 +13,79 @@ import ApolloClient from "apollo-boost";
 import { render } from "react-dom";
 import { ApolloProvider } from "react-apollo";
 
-const allProjects = gql`
-    query{
-        projects{
-            id
-            title
-            
-            description
-            
-            cover{
-                id
-                handle
-            }
-        }
-    }
-`
+
 
 const client = new ApolloClient({
     uri: "https://api-euwest.graphcms.com/v1/cjsdfr8va10zq01ckz2l4mqku/master"
   });
 
-
+const allProjects = gql`
+  query{
+      projects{
+          id
+          title
+          
+          description
+          
+          cover{
+              id
+              handle
+          }
+      }
+  }
+`
 
   const Projects = () => (
+      
     <Query
       query={gql`
       query{
-        projects{
-            id
-            title
-            
-            description
-            
-            cover{
-                id
-                handle
-            }
-        }
+          projects{
+              id
+              title
+              
+              description
+              
+              cover{
+                  id
+                  handle
+              }
+          }
+      }`
     }
-      `}
     >
       {({ loading, error, data }) => {
-        if (loading) return <p>Loading...</p>;
-        if (error) return <p>Error :(</p>;
+        if (loading) return <div className="container">
+                                <p>Loading...</p>
+                            </div>;
+        if (error) return <div className="container">
+                                <p>Error :(</p>
+                            </div>;
   
-        return data.projects.map(({ id, title }) => (
-          <div key={id}>
-            <p>{id}: {title}</p>
-          </div>
+        return data.projects.map(({ id, title, cover, description }) => (
+          
+            
+        <React.Fragment>
+
+                    <div className="col-6 col-lg-4" key={id}>
+                        <Card className="mb-4">
+                            <CardImg top width="100%" height="400px" src= {`https://media.graphcms.com/resize=width:400/${cover.handle}`} alt="Card image cap" />
+                            <CardBody>
+                                <CardTitle>
+                                    <h5>
+                                        {title}
+                                    </h5>
+                                </CardTitle>
+                                
+                                <CardText>{description}</CardText>
+                                <Button className="text-light">Button</Button>
+                            </CardBody>
+                        </Card>
+                    </div>
+
+        </React.Fragment>
+
+
         ));
       }}
     </Query>
@@ -70,12 +96,13 @@ const client = new ApolloClient({
 const AllProjects = (/* {  url: { pathname }, data: { allProjects } } */) => {
    
     return (
-      <Layout >
+      <Layout>
           <ApolloProvider client={client}>
-          <div>
-            <h2>My first Apollo app 🚀</h2>
+            <div className="row">
             <Projects />
-        </div>
+            </div>
+            
+        
           </ApolloProvider>
         {/* <Nav pathname={pathname} /> */}
         {

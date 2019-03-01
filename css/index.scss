@@ -5,10 +5,15 @@
 /* @import "../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min" */;
 
 body{
-    background-color: #9EC5AB;
+    background-color:rgb(255, 244, 209);
 }
 
 .icon-spin {
     display: inline-block;
     animation: spin 1s infinite linear;
   }
+
+.nav-link:hover{
+    text-decoration: underline;
+    text-decoration-color: $secondary;
+}

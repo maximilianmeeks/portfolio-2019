@@ -45,29 +45,29 @@ export default class extends Component {
                 </Head>
 
                 <Container>
-                <Header/>
-                    <Navbar color="light" light expand="md">
-                        <NavbarBrand href="/">Maximilian Meeks</NavbarBrand>
+                <Header />
+                    <Navbar color="light" light expand="md" className="pb-4">
+                        
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
-                            <Nav className="mr-auto" navbar>
+                            <Nav className="mx-auto" navbar>
                             <NavItem>
-                                <Link href="/about/">
-                                    <a>
+                                <Link href="/about/" >
+                                    <a className="nav-link">
                                        About
                                     </a>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link href="/work/">
-                                    <a>
+                                <Link href="/work/" >
+                                    <a className="nav-link">
                                         Work
                                     </a>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link href="/contact/">
-                                    <a>
+                                <Link href="/contact/" >
+                                    <a className="nav-link">
                                        Contact
                                     </a>
                                 </Link>
