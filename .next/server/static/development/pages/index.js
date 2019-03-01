@@ -116,7 +116,7 @@ var Header = function Header() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    class: "fas fa-igloo icon-spin",
+    class: "fas fa-igloo fa-spin",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 3
