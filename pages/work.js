@@ -79,7 +79,7 @@ const allProjects = gql`
                                 </CardTitle>
                                 
                                 <CardText>{description}</CardText>
-                               <Link prefetch href={{pathname: '/post', query: {slug: slug}}} as={`/post/${slug}`}>
+                               <Link prefetch href={{query: {slug: slug}}} as={`/${slug}`}>
                                     <Button className="text-light">
                                         Button
                                     </Button>

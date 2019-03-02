@@ -1,20 +1,18 @@
 
 import React from 'react';
-import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
-import {Query} from 'react-apollo'
-import gql from 'graphql-tag'
-import SimpleAppBar from "../components/menuBar";
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import ReactMarkdown from 'react-markdown'
+import Layout from "../components/layout";
+import {Query} from 'react-apollo';
+import gql from 'graphql-tag';
+
+
+
+/* import ReactMarkdown from 'react-markdown' */
 
 export const allPostsQuery = gql`
     query($slug: String){
         projects(where: {slug: $slug}){
             id
             title
-            text
         }
     }
 `
@@ -33,13 +31,31 @@ export const PaginationQuery = gql`
         }
     }
 `
+
+const Projects = () => (
+      
+    <Query query={allPostsQuery}>
+    {({ loading, error, data: {title} }) => {
+        if (loading) return <div className="container">
+                                <p>Loading...</p>
+                            </div>;
+        if (error) return <div className="container">
+                                <p>Error :(</p>
+                            </div>;
+    return 
+    </Query>
+
+
 class Post extends React.Component {
-    static async getInitialProps({query}) {
+/*     static async getInitialProps({query}) {
       console.log('SLUG', query.slug)
       return {}
-    }
+    } */
     render() {
-      return <h1>My blog post</h1>
+        
+      return (
+      <Layout><h1>{query.title}</h1></Layout>
+      )
     }
   }
   
