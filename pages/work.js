@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { graphql, Query } from 'react-apollo';
 import { Container, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button, Row, Col } from "reactstrap";
+
 import Layout from "../components/layout";
 import gql from 'graphql-tag';
 import withData from "../lib/withData";
@@ -43,8 +44,9 @@ const allProjects = gql`
           projects{
               id
               title
-              
+              slug
               description
+              
               
               cover{
                   id
@@ -54,7 +56,7 @@ const allProjects = gql`
       }`
     }
     >
-      {({ loading, error, data }) => {
+      {({ loading, error, data: {projects} }) => {
         if (loading) return <div className="container">
                                 <p>Loading...</p>
                             </div>;
@@ -62,14 +64,13 @@ const allProjects = gql`
                                 <p>Error :(</p>
                             </div>;
   
-        return data.projects.map(({ id, title, cover, description }) => (
-          
-            
+        return projects.map(({ id, title, cover, description, slug }) => (
+           
         <React.Fragment>
 
-                    <div className="col-6 col-lg-4" key={id}>
+                    <div className="col-10 col-md-4 mx-auto" key={id}>
                         <Card className="mb-4">
-                            <CardImg top width="100%" height="400px" src= {`https://media.graphcms.com/resize=width:400/${cover.handle}`} alt="Card image cap" />
+                            <CardImg top width="100%" height="350px" src= {`https://media.graphcms.com/resize=width:400/${cover.handle}`} alt="Card image cap" />
                             <CardBody>
                                 <CardTitle>
                                     <h5>
@@ -78,7 +79,11 @@ const allProjects = gql`
                                 </CardTitle>
                                 
                                 <CardText>{description}</CardText>
-                                <Button className="text-light">Button</Button>
+                               <Link prefetch href={{pathname: '/post', query: {slug: slug}}} as={`/post/${slug}`}>
+                                    <Button className="text-light">
+                                        Button
+                                    </Button>
+                                </Link>
                             </CardBody>
                         </Card>
                     </div>

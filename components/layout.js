@@ -45,7 +45,9 @@ export default class extends Component {
                 </Head>
 
                 <Container>
+                <Link href="/">
                 <Header />
+                </Link>
                     <Navbar color="light" light expand="md" className="pb-4">
                         
                         <NavbarToggler onClick={this.toggle} />
@@ -77,7 +79,7 @@ export default class extends Component {
                     </Navbar>
                     
                 <Container>
-                <Row>
+                    <Row>
                         <Col className="bg-light px-0" lg="12">
                             {this.props.children}
                         </Col>
