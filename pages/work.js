@@ -68,9 +68,9 @@ const allProjects = gql`
            
         <React.Fragment>
 
-                    <div className="col-10 col-md-4 mx-auto" key={id}>
+                    <div className="col-10 col-md-6 col-lg-4 col-xl-3 mx-auto" key={id}>
                         <Card className="mb-4">
-                            <CardImg top width="100%" height="350px" src= {`https://media.graphcms.com/resize=width:400/${cover.handle}`} alt="Card image cap" />
+                            <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${cover.handle}`} alt="Card image cap" />
                             <CardBody>
                                 <CardTitle>
                                     <h5>
