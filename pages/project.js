@@ -3,10 +3,19 @@ import React from 'react';
 import Layout from "../components/layout";
 import {Query} from 'react-apollo';
 import gql from 'graphql-tag';
-
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import fetch from 'node-fetch';
+import { createHttpLink } from 'apollo-link-http';
 
 
 /* import ReactMarkdown from 'react-markdown' */
+const client = new ApolloClient({
+    link: createHttpLink({
+        uri: "https://api-euwest.graphcms.com/v1/cjsdfr8va10zq01ckz2l4mqku/master",
+        fetch: fetch,
+      })
+  });
 
 export const allPostsQuery = gql`
     query($slug: String){
@@ -33,18 +42,19 @@ export const PaginationQuery = gql`
 `
 
 const Projects = () => (
-      
-    <Query query={allPostsQuery}>
-    {({ loading, error, data: {title} }) => {
+    <Query query={allPostsQuery} >
+    {({ loading, error, data: {projects} }) => {
         if (loading) return <div className="container">
                                 <p>Loading...</p>
                             </div>;
         if (error) return <div className="container">
                                 <p>Error :(</p>
                             </div>;
-    return 
+                            
+        return console.log(projects)
+                                }}
     </Query>
-
+)
 
 class Post extends React.Component {
 /*     static async getInitialProps({query}) {
@@ -52,11 +62,15 @@ class Post extends React.Component {
       return {}
     } */
     render() {
-        
+
       return (
-      <Layout><h1>{query.title}</h1></Layout>
+      <Layout>
+          <ApolloProvider client={client}>
+                <Projects/>
+          </ApolloProvider>
+      </Layout>
       )
     }
   }
-  
+
   export default Post

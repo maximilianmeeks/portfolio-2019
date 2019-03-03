@@ -11,7 +11,7 @@ const Header = () => (
         </Link>
         
     <div className="text-right">
-    <span className="text-primary text-right">Some sick shit is gonna go down here</span>
+    <span className="text-primary text-right">Sick shit is gonna happen here</span>
     </div>
     
     </div>

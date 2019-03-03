@@ -50,7 +50,7 @@ export default class extends Component {
                 </Link>
                     <Navbar color="light" light expand="md" className="pb-4">
                         
-                        <NavbarToggler onClick={this.toggle} />
+                        <NavbarToggler onClick={this.toggle} className="ml-auto"/>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="mx-auto" navbar>
                             <NavItem>

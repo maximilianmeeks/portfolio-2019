@@ -38,24 +38,7 @@ const allProjects = gql`
 
   const Projects = () => (
       
-    <Query
-      query={gql`
-      query{
-          projects{
-              id
-              title
-              slug
-              description
-              
-              
-              cover{
-                  id
-                  handle
-              }
-          }
-      }`
-    }
-    >
+    <Query query={allProjects}>
       {({ loading, error, data: {projects} }) => {
         if (loading) return <div className="container">
                                 <p>Loading...</p>
