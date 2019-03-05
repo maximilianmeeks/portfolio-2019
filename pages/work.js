@@ -54,24 +54,24 @@ const allProjects = gql`
                                 <p>Error :(</p>
                             </div>;
   
-        return projects.map(({ id, title, cover, description, slug }) => (
+        return projects.map((project, index) => (
            
         <React.Fragment>
 
-                    <div className="col-10 col-md-6 col-lg-4 col-xl-3 mx-auto" key={id}>
+                    <div className="col-10 col-md-6 col-lg-4 col-xl-3 mx-auto" key={index}>
                         <Card className="mb-4">
-                            <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${cover.handle}`} alt="Card image cap" />
+                            <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt="Card image cap" />
                             <CardBody>
                                 <CardTitle>
                                     <h5>
-                                        {title}
+                                        {project.title}
                                     </h5>
                                 </CardTitle>
                                 
-                                <CardText>{description}</CardText>
-                               <Link prefetch href={`/project?name=${slug}`} as={`/project/${slug}`} 
-                               title={title}
-                                description={description}>
+                                <CardText>{project.description}</CardText>
+                               <Link prefetch href={`/project?name=${project.slug}`} as={`/project/${project.slug}`} 
+                               title={project.title}
+                                description={project.description}>
                                     <Button className="text-light">
                                         Button
                                     </Button>
