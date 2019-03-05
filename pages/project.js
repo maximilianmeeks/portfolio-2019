@@ -60,16 +60,14 @@ const Projects = () => (
 ); */
 
 class Post extends React.Component {
-static async getInitialProps({query}) {
-      console.log(query)
-      return { title: query.title }
-      
-    } 
     render() {
-
+    /* const {title, description} = this.props;  */
+    console.log(this.props.title)
       return (
       <Layout>
-          <h1>{query}</h1>
+          {/* <img src={``}</img> */}
+{/*           <h1>{title}</h1>
+          <div>{description}</div> */}
       </Layout>
       )
     }

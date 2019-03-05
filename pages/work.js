@@ -69,7 +69,9 @@ const allProjects = gql`
                                 </CardTitle>
                                 
                                 <CardText>{description}</CardText>
-                               <Link prefetch href={`/project?name=${slug}`} as={`/project/${slug}`}>
+                               <Link prefetch href={`/project?name=${slug}`} as={`/project/${slug}`} 
+                               title={title}
+                                description={description}>
                                     <Button className="text-light">
                                         Button
                                     </Button>
