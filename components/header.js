@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => (
     
         <div className="container bg-light">
-        <i class="fab fa-react fa-spin"></i>
+        <i className="fab fa-react fa-spin"></i>
         <Link href="/">
         <a className="text-decoration-none">
         <h1 className="text-secondary text-right text-lowercase">Maximilian Meeks</h1>

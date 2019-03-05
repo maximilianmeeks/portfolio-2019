@@ -54,21 +54,21 @@ export default class extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="mx-auto" navbar>
                             <NavItem>
-                                <Link href="/about/" >
+                                <Link href="/about" >
                                     <a className="nav-link">
                                        About
                                     </a>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link href="/work/" >
+                                <Link href="/work" >
                                     <a className="nav-link">
                                         Work
                                     </a>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link href="/contact/" >
+                                <Link href="/contact" >
                                     <a className="nav-link">
                                        Contact
                                     </a>

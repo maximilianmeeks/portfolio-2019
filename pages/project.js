@@ -3,18 +3,20 @@ import React from 'react';
 import Layout from "../components/layout";
 import {Query} from 'react-apollo';
 import gql from 'graphql-tag';
-import ApolloClient from "apollo-boost";
+import { ApolloClient } from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import fetch from 'node-fetch';
-import { createHttpLink } from 'apollo-link-http';
+import { HttpLink } from 'apollo-link-http';
+import fetch from 'isomorphic-fetch';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 
 /* import ReactMarkdown from 'react-markdown' */
-const client = new ApolloClient({
-    link: createHttpLink({
-        uri: "https://api-euwest.graphcms.com/v1/cjsdfr8va10zq01ckz2l4mqku/master",
-        fetch: fetch,
-      })
+/* const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    link: new HttpLink({
+        uri:"https://api-euwest.graphcms.com/v1/cjsdfr8va10zq01ckz2l4mqku/master",
+        fetch: fetch
+    })
   });
 
 export const allPostsQuery = gql`
@@ -22,6 +24,7 @@ export const allPostsQuery = gql`
         projects(where: {slug: $slug}){
             id
             title
+            slug
         }
     }
 `
@@ -43,7 +46,7 @@ export const PaginationQuery = gql`
 
 const Projects = () => (
     <Query query={allPostsQuery} >
-    {({ loading, error, data: {projects} }) => {
+     {({ loading, error, data}) => {
         if (loading) return <div className="container">
                                 <p>Loading...</p>
                             </div>;
@@ -51,23 +54,22 @@ const Projects = () => (
                                 <p>Error :(</p>
                             </div>;
                             
-        return console.log(projects)
-                                }}
+        return <h1>{data.projects.slug}</h1>
+    }}
     </Query>
-)
+); */
 
 class Post extends React.Component {
-/*     static async getInitialProps({query}) {
-      console.log('SLUG', query.slug)
-      return {}
-    } */
+static async getInitialProps({query}) {
+      console.log(query)
+      return { title: query.title }
+      
+    } 
     render() {
 
       return (
       <Layout>
-          <ApolloProvider client={client}>
-                <Projects/>
-          </ApolloProvider>
+          <h1>{query}</h1>
       </Layout>
       )
     }

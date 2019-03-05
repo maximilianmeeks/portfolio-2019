@@ -1,52 +1,24 @@
-/* const express = require("express")
-const next = require("next")
-const routes = require('./routes')
-const dev = process.env.NODE_ENV !== 'production'
-
-const port = process.env.PORT || 4000
-
-
-app.prepare()
-.then(() => {
-    const server = express()
-
-    server.get('*', (req, res) => {
-        return handle(req, res)
-      })
-        
-      server.listen(port, (err) => {
-        if (err) throw err
-        console.log(`> Ready on http://localhost:${port}`)
-      })
-    })
-    .catch((ex) => {
-      console.error(ex.stack)
-      process.exit(1)
-    })
-    server.use("/static", express.static("static"))
-
-    server.get("/:slug", (req, res) => {
-        return app.render(req, res, { slug: req.params.slug })
-      })
-
- */
-
 'use strict';
 
-var next = require('next');
-var express = require('express');
+const next = require('next');
+const express = require('express');
 // const withCSS = require('@zeit/next-css');
-var routes = require('./routes');
-var port = process.env.PORT || 3333;
-var dev = process.env.NODE_ENV !== 'production';
-var app = next({
+const routes = require('./routes');
+const port = process.env.PORT || 3333;
+const dev = process.env.NODE_ENV !== 'production';
+
+const app = next({
   dev: dev
 });
+
+const handle = app.getRequestHandler();
 
 app.prepare().then(function() {
   const server = express()
    
   server.use('/static', express.static('static'))
+
+  server.use (handle)
 
   server.get('/', (req, res) => {
     return app.render(req, res, '/')
@@ -71,6 +43,10 @@ app.prepare().then(function() {
     }
     return app.render(req, res, '/project', queryParams)
   })
+
+/*   server.post('/graphql', (req, res) => {
+    return app.render(req, res, '/project')
+  }) */
 
   server.listen(port, function(err) {
       if (err) {

@@ -10,14 +10,21 @@ import withData from "../lib/withData";
 import Loading from '../components/Loading';
 import Grid from '../components/Grid'
 
-import ApolloClient from "apollo-boost";
+import ApolloClient from "apollo-client";
 import { render } from "react-dom";
 import { ApolloProvider } from "react-apollo";
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import fetch from 'isomorphic-fetch';
 
 
 
 const client = new ApolloClient({
-    uri: "https://api-euwest.graphcms.com/v1/cjsdfr8va10zq01ckz2l4mqku/master"
+    cache: new InMemoryCache(),
+    link: new HttpLink({
+        uri:"https://api-euwest.graphcms.com/v1/cjsdfr8va10zq01ckz2l4mqku/master",
+        fetch: fetch
+    })
   });
 
 const allProjects = gql`
@@ -25,7 +32,7 @@ const allProjects = gql`
       projects{
           id
           title
-          
+          slug
           description
           
           cover{
@@ -62,7 +69,7 @@ const allProjects = gql`
                                 </CardTitle>
                                 
                                 <CardText>{description}</CardText>
-                               <Link prefetch href={{query: {slug: slug}}} as={`/${slug}`}>
+                               <Link prefetch href={`/project?name=${slug}`} as={`/project/${slug}`}>
                                     <Button className="text-light">
                                         Button
                                     </Button>
