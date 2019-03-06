@@ -53,7 +53,8 @@ export const PaginationQuery = gql`
 class Project extends React.Component {
 
     render() {
-        const query = window.location.pathname.split("/").pop()  
+        const query = location.pathname.split("/").pop() 
+        console.log(query) 
       return (
         
        <Query query={allPostsQuery} variables={{slug: query}}>
