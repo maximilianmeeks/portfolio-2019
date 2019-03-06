@@ -25,6 +25,12 @@ export const allPostsQuery = gql`
             id
             title
             slug
+            description
+
+            cover{
+                id
+                handle
+            }
         }
     }
 `
@@ -45,14 +51,9 @@ export const PaginationQuery = gql`
 `
 
 class Project extends React.Component {
-    static getInitialProps({query}) {
-        console.log({query})
-        
-        return {query};
- }
+
     render() {
-    console.log(this.props.slug)
-    const query = this.props.query
+        const query = window.location.pathname.split("/").pop()  
       return (
         
        <Query query={allPostsQuery} variables={{slug: query}}>
@@ -65,9 +66,13 @@ class Project extends React.Component {
                                     </div>;
                             
         return <React.Fragment> 
-            {console.log(projects)}
-       {/*  <h1>{projects[0].title}</h1>
-                <span>{projects[0].description}</span> */}
+            <div>
+                <h1 className="text-primary">{projects[0].title}</h1>
+                <span className="text-secondary">{projects[0].description}</span>
+            </div>
+            <div>
+            <img src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`}/>
+            </div>
                 </React.Fragment>
     }}
         </Query>
@@ -76,7 +81,6 @@ class Project extends React.Component {
       ) 
     } 
   }
-
 
  const Rendered = () => {
       return(
