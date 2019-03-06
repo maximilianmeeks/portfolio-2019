@@ -46,19 +46,20 @@ const allProjects = gql`
   const Projects = () => (
       
     <Query query={allProjects}>
-      {({ loading, error, data: {projects} }) => {
+      {({ loading, error, data:{projects} }) => {
         if (loading) return <div className="container">
                                 <p>Loading...</p>
                             </div>;
         if (error) return <div className="container">
                                 <p>Error :(</p>
                             </div>;
-  
-        return projects.map((project, index) => (
-           
-        <React.Fragment>
 
-                    <div className="col-10 col-md-6 col-lg-4 col-xl-3 mx-auto" key={index}>
+        return  (
+
+        <React.Fragment>
+            <Row>  
+            {projects.map((project, index) => (
+                <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
                         <Card className="mb-4">
                             <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt="Card image cap" />
                             <CardBody>
@@ -78,12 +79,13 @@ const allProjects = gql`
                                 </Link>
                             </CardBody>
                         </Card>
-                    </div>
-
+                        </Col>
+                        ))}
+                    </Row>
         </React.Fragment>
 
 
-        ));
+        );
       }}
     </Query>
   );
