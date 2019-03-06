@@ -11,7 +11,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 
 /* import ReactMarkdown from 'react-markdown' */
-/* const client = new ApolloClient({
+const client = new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
         uri:"https://api-euwest.graphcms.com/v1/cjsdfr8va10zq01ckz2l4mqku/master",
@@ -43,7 +43,7 @@ export const PaginationQuery = gql`
         }
     }
 `
-
+/*
 const Projects = () => (
     <Query query={allPostsQuery} >
      {({ loading, error, data}) => {
@@ -59,18 +59,48 @@ const Projects = () => (
     </Query>
 ); */
 
-class Post extends React.Component {
+class Project extends React.Component {
+    static getInitialProps({query}) {
+        const isServer = typeof window === "undefined";
+        
+        return {isServer, query};
+ }
     render() {
-    /* const {title, description} = this.props;  */
-    console.log(this.props.title)
+    console.log(this.props.query)
+    const query = this.props.query
       return (
-      <Layout>
-          {/* <img src={``}</img> */}
-{/*           <h1>{title}</h1>
-          <div>{description}</div> */}
-      </Layout>
-      )
-    }
+        
+       <Query query={allPostsQuery} variables={{slug: query}}>
+            {({ loading, error, data:{projects}}) => {
+                if (loading) return <div className="container">
+                                        <p>Loading...</p>
+                                    </div>;
+                if (error) return <div className="container">
+                                        <p>Error :(</p>
+                                    </div>;
+                            
+        return <React.Fragment> 
+            {console.log(projects)}
+       {/*  <h1>{projects[0].title}</h1>
+                <span>{projects[0].description}</span> */}
+                </React.Fragment>
+    }}
+    </Query>
+
+      
+      ) 
+    } 
   }
 
-  export default Post
+
+ const Rendered = () => {
+      return(
+          <Layout>
+              <ApolloProvider client={client}>
+                <Project/>
+              </ApolloProvider>
+          </Layout>
+      )
+  }
+
+export default Rendered

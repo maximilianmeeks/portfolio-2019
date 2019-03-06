@@ -60,28 +60,26 @@ const allProjects = gql`
             <Row>  
             {projects.map((project, index) => (
                 <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
-                        <Card className="mb-4">
-                            <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt="Card image cap" />
-                            <CardBody>
-                                <CardTitle>
-                                    <h5>
-                                        {project.title}
-                                    </h5>
-                                </CardTitle>
-                                
-                                <CardText>{project.description}</CardText>
-                               <Link prefetch href={`/project?name=${project.slug}`} as={`/project/${project.slug}`} 
-                               title={project.title}
-                                description={project.description}>
-                                    <Button className="text-light">
-                                        Button
-                                    </Button>
-                                </Link>
-                            </CardBody>
-                        </Card>
-                        </Col>
-                        ))}
-                    </Row>
+                    <Card className="mb-4">
+                        <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt="Card image cap" />
+                        <CardBody>
+                            <CardTitle>
+                                <h5>
+                                    {project.title}
+                                </h5>
+                            </CardTitle>
+                            
+                            <CardText>{project.description}</CardText>
+                            <Link prefetch href={`/project?slug=${project.slug}`} as={`/project/${project.slug}`}>
+                                <Button className="text-light">
+                                    Button
+                                </Button>
+                            </Link>
+                        </CardBody>
+                    </Card>
+                </Col>
+                ))}
+            </Row>
         </React.Fragment>
 
 
@@ -97,27 +95,12 @@ const AllProjects = (/* {  url: { pathname }, data: { allProjects } } */) => {
     return (
       <Layout>
           <ApolloProvider client={client}>
-            <div className="row">
-            <Projects />
-            </div>
             
-        
+            <Projects />
+            
           </ApolloProvider>
-        {/* <Nav pathname={pathname} /> */}
-        {
-        
-            <div>
-{/*               <Header
-                title='Vinylbase'
-                subLine='The best music reviews on the interwebs'
-                isIcon
-              /> */}
-              <section>
-               {/*  <Grid entries={allProjects} type='reviews' /> */}
-              </section>
-            </div>
-          
-         }
+
+         
       </Layout>
     )
   }
