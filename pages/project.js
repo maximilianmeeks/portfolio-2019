@@ -43,21 +43,6 @@ export const PaginationQuery = gql`
         }
     }
 `
-/*
-const Projects = () => (
-    <Query query={allPostsQuery} >
-     {({ loading, error, data}) => {
-        if (loading) return <div className="container">
-                                <p>Loading...</p>
-                            </div>;
-        if (error) return <div className="container">
-                                <p>Error :(</p>
-                            </div>;
-                            
-        return <h1>{data.projects.slug}</h1>
-    }}
-    </Query>
-); */
 
 class Project extends React.Component {
     static getInitialProps({query}) {
@@ -85,7 +70,7 @@ class Project extends React.Component {
                 <span>{projects[0].description}</span> */}
                 </React.Fragment>
     }}
-    </Query>
+        </Query>
 
       
       ) 
