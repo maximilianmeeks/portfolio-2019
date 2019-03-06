@@ -61,12 +61,12 @@ const Projects = () => (
 
 class Project extends React.Component {
     static getInitialProps({query}) {
-        const isServer = typeof window === "undefined";
+        console.log({query})
         
-        return {isServer, query};
+        return {query};
  }
     render() {
-    console.log(this.props.query)
+    console.log(this.props.slug)
     const query = this.props.query
       return (
         

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { graphql, Query } from 'react-apollo';
 import { Container, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button, Row, Col } from "reactstrap";
@@ -56,7 +56,7 @@ const allProjects = gql`
 
         return  (
 
-        <React.Fragment>
+        <Fragment>
             <Row>  
             {projects.map((project, index) => (
                 <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
@@ -80,7 +80,7 @@ const allProjects = gql`
                 </Col>
                 ))}
             </Row>
-        </React.Fragment>
+        </Fragment>
 
 
         );
@@ -90,7 +90,7 @@ const allProjects = gql`
 
 
 
-const AllProjects = (/* {  url: { pathname }, data: { allProjects } } */) => {
+const AllProjects = () => {
    
     return (
       <Layout>
