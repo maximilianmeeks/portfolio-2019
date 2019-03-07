@@ -8,6 +8,7 @@ import { ApolloProvider } from "react-apollo";
 import { HttpLink } from 'apollo-link-http';
 import fetch from 'isomorphic-fetch';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { Container, Row, Col } from "reactstrap";
 
 
 /* import ReactMarkdown from 'react-markdown' */
@@ -67,13 +68,13 @@ class Project extends React.Component {
                                     </div>;
                             
         return <React.Fragment> 
+            <Container>
             <div>
                 <h1 className="text-primary">{projects[0].title}</h1>
                 <span className="text-secondary">{projects[0].description}</span>
             </div>
-            <div>
-            <img src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`}/>
-            </div>
+            <img src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} className="img-fluid"/>
+            </Container>
                 </React.Fragment>
     }}
         </Query>

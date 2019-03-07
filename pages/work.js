@@ -6,7 +6,6 @@ import { Container, Card, CardImg, CardText, CardBody,
 
 import Layout from "../components/layout";
 import gql from 'graphql-tag';
-import withData from "../lib/withData";
 import Loading from '../components/Loading';
 import Grid from '../components/Grid'
 

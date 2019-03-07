@@ -6,7 +6,7 @@ const Header = () => (
         <i className="fab fa-react fa-spin"></i>
         <Link href="/">
         <a className="text-decoration-none">
-        <h1 className="text-secondary text-right text-lowercase">Maximilian Meeks</h1>
+        <h1 className="text-secondary text-right text-lowercase">Gregor Baszak</h1>
         </a>
         </Link>
         
