@@ -1,5 +1,5 @@
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { Container, Row, Col } from 'reactstrap';
 import React, { Component } from "react";
 

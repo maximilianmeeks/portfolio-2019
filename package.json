@@ -25,6 +25,7 @@
         "node-fetch": "^2.3.0",
         "node-sass": "^4.11.0",
         "now": "^14.0.2",
+        "prop-types": "^15.7.2",
         "raw-loader": "^1.0.0",
         "react": "^16.8.3",
         "react-apollo": "^2.5.1",
