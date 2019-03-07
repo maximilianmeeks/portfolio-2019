@@ -1,4 +1,5 @@
 module.exports = {
+    target: 'serverless',
     webpack: (config, { dev }) => {
       config.module.rules.push(
         {
@@ -19,9 +20,5 @@ module.exports = {
       )
       return config
     }
-  }
 
-/*   const withTypescript = require("@zeit/next-typescript");
-  module.exports = withTypescript({
-    target: "serverless"
-  }); */
+  }
