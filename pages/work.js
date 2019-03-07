@@ -7,7 +7,6 @@ import { Container, Card, CardImg, CardText, CardBody,
 import Layout from "../components/Layout";
 import gql from 'graphql-tag';
 import Loading from '../components/Loading';
-import Grid from '../components/Grid'
 
 import ApolloClient from "apollo-client";
 import { render } from "react-dom";
