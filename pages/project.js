@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Layout from "../components/Layout";
+import Pagination from "../components/Pagination";
 
 
 export const allProjectsQuery = gql`
@@ -24,13 +25,13 @@ export const allProjectsQuery = gql`
 `
 
 export const PaginationQuery = gql`
-    query($postId: String){
-        previousProject: projects(last:1, before: $postId ){
+    query($projectId: String){
+        previousProject: projects(last:1, before: $projectId ){
             title
             slug
             id
         }
-        nextProject: projects(first:1, after: $postId){
+        nextProject: projects(first:1, after: $projectId){
             title
             slug
             id
@@ -66,7 +67,21 @@ class Project extends Component {
               <span className="text-secondary">{projects[0].description}</span>
           </div>
           <img src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} className="img-fluid"/>
+          <Row>
+          <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
+                                    {({loading, data: {previousProject, nextProject}}) => {
+                                        if (loading) return <div>Loading</div>
+                                        return (
+                                            <Col xs="12">
+
+                                                <Pagination previous={previousProject[0]} next={nextProject[0]}/>
+                                            </Col>
+                                        )
+                                    }}
+                                </Query>
+          </Row>
           </Container>
+
               </React.Fragment>
           )}}
       </Query>
