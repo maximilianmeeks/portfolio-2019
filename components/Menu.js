@@ -1,19 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import {
-    Container,
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    Col,
-    Row } from 'reactstrap';
+    NavItem,} from 'reactstrap';
 import Link from "next/link";
 
 

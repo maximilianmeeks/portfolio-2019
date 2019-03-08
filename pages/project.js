@@ -1,12 +1,11 @@
 import React, {Component, Fragment} from "react";
 import { Container, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button, Row, Col } from "reactstrap";
-import Link from "next/link";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Layout from "../components/Layout";
-import Pagination from "../components/Pagination";
-import Loading from "../components/Loading";
+import Pagination from "../components/pagination";
+import Loading from "../components/loading";
 
 
 export const allProjectsQuery = gql`
@@ -15,7 +14,12 @@ export const allProjectsQuery = gql`
             id
             title
             slug
+            subheading
             description
+            year
+            skills
+            technologies
+            links
 
             cover{
                 id
@@ -57,31 +61,46 @@ class Project extends Component {
                                     <Loading/>
                                 </div>;
             if (error) return <div className="container">
-                                    <p>Error :(</p>
+                                    <Error/>
                                 </div>;
     
             return (
             <Fragment> 
                 <Container>
-                    <div>
-                        <h1 className="text-primary">{projects[0].title}</h1>
-                        <span className="text-secondary">{projects[0].description}</span>
-                    </div>
-                    <img src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} className="img-fluid"/>
                     <Row>
-                        <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
-                            {({loading, data: {previousProject, nextProject}}) => {
-                                if (loading) return <Loading/>
-                                return (
-                                    <Col xs="12">
-                                        <Pagination previous={previousProject[0]} next={nextProject[0]}/>
-                                    </Col>
-                                )
-                            }}
-                        </Query>
+                        <Col className="mx-auto my-3 text-center">
+                            <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
+                                {({loading, data: {previousProject, nextProject}}) => {
+                                    if (loading) return <Loading/>
+                                    if (error) return <Error/>
+                                    return (
+                                        <Pagination previous={previousProject[0]} next={nextProject[0]}/> 
+                                    )
+                                }}
+                            </Query>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="11" className="mx-auto text-center">
+                            <h1 className="text-primary mx-auto font-weight-bold">{projects[0].title}</h1>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="11" className="mx-auto mb-4 text-center">
+                            <span className="text-secondary mx-auto">{projects[0].subheading}</span>
+                        </Col>
+                    </Row>                   
+                    <Row>
+                        <Col xs="11" className="mx-auto">
+                    <img src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} className="img-fluid"/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="11" className="mx-auto my-3">
+                        <p>{projects[0].description}</p>
+                        </Col>
                     </Row>
                 </Container>
-
             </Fragment>
             )}}
         </Query>

@@ -10,8 +10,7 @@ import {
         Col,
         Row } from 'reactstrap';
 
-export default class extends Component {
-
+class Layout extends Component {
     render() {
         return(
             <Fragment>
@@ -41,3 +40,5 @@ export default class extends Component {
         )
     }
 }
+
+export default Layout;

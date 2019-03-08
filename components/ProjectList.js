@@ -1,10 +1,10 @@
-import React, {Component, Fragment} from "react";
-import { Container, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Row, Col } from "reactstrap";
+import React, { Fragment } from "react";
+import { Card, CardImg, Row, Col } from "reactstrap";
 import Link from "next/link";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import Loading from "../components/Loading";
+import Loading from "./loading";
+import Error from "./error";
 
 
 const allProjects = gql`
@@ -13,7 +13,6 @@ const allProjects = gql`
           id
           title
           slug
-          description
           
           cover{
               id
@@ -23,7 +22,7 @@ const allProjects = gql`
   }
 `
 
-export default function ProjectList () {
+function ProjectList () {
     return(
         <Query query={allProjects}>
         {({ loading, error, data:{projects} }) => {
@@ -31,33 +30,32 @@ export default function ProjectList () {
                                   <Loading/>
                               </div>;
           if (error) return <div className="container">
-                                  <p>Error :(</p>
+                                  <Error/>
                               </div>;
   
           return  (
               
             <Fragment>
-            <Row>  
-            {projects.map((project, index) => (
-                <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
-                    <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}} as={`/${project.slug}`}>
-                    <a>
-                    <Card className="mb-4">
-                        <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt="Card image cap" />
+                <Row>  
+                {projects.map((project, index) => (
+                    <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
+                        <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}}>
+                        <a>
+                        <Card className="mb-4">
+                            <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt="Card image cap" />
+                        </Card>
+                        </a>
+                        </Link>
+                    </Col>
+                    ))}
+                </Row>
+            </Fragment>
 
-                    </Card>
-                    </a>
-                    </Link>
-                </Col>
-                ))}
-            </Row>
-        </Fragment>
 
-
-        );
-      }}
-    </Query>
+            );
+        }}
+        </Query>
   )
 }
 
-       
+export default ProjectList;
