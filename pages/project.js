@@ -107,7 +107,7 @@ class Project extends Component {
                                     
                                         {projects[0].technologies.map((technology, index) => (
                                             <ul className="text-secondary list-group list-group-flush text-right">
-                                                <li key={index} className="list-group-item">{technology}</li>
+                                                <li key={index} className="list-group-item bg-light">{technology}</li>
                                             </ul>
                                         ))}
                                     
@@ -116,7 +116,7 @@ class Project extends Component {
                             <h5 className="text-right">Categories</h5>  
                                 {projects[0].skills.map((skill, index) => (
                                     <ul className="text-secondary list-group list-group-flush text-right">
-                                        <li key={index} className="list-group-item">{skill}</li>
+                                        <li key={index} className="list-group-item bg-light">{skill}</li>
                                     </ul>
                                 ))}       
                             </Col> 
