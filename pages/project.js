@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from "react";
-import { Container, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import Link from "next/link";
 import Layout from "../components/Layout";
 import Pagination from "../components/pagination";
 import Loading from "../components/loading";
@@ -92,25 +92,46 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="11" className="mx-auto">
-                    <img src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} className="img-fluid"/>
+                            <img className="img-fluid border" src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} />
                         </Col>
                     </Row>
                     <Row>
                         <Col xs="11" className="mx-auto my-3">
-                        <p>{projects[0].description}</p>
+                            <p>{projects[0].description}</p>
+                            <p className="text-right">{projects[0].year}</p>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="6">
-                                <h5>Technologies</h5>
-                                <p className="text-primary">{projects[0].technologies.map((technology, index) => (
-                                    <ul>
-                                        <li key={index}>{technology}</li>
+                            <Col xs="6">
+                                    <h5 className="text-right">Technologies</h5>
+                                    
+                                        {projects[0].technologies.map((technology, index) => (
+                                            <ul className="text-secondary list-group list-group-flush text-right">
+                                                <li key={index} className="list-group-item">{technology}</li>
+                                            </ul>
+                                        ))}
+                                    
+                            </Col>
+                            <Col xs="6">
+                            <h5 className="text-right">Categories</h5>  
+                                {projects[0].skills.map((skill, index) => (
+                                    <ul className="text-secondary list-group list-group-flush text-right">
+                                        <li key={index} className="list-group-item">{skill}</li>
                                     </ul>
-                                ))}</p>
-                        </Col>
-                        <Col xs="6">
-                        
+                                ))}       
+                            </Col> 
+                    </Row>
+                    <Row className="my-4">
+                        <Col className="d-flex justify-content-center">
+                            {projects[0].links.map((link, index) => (
+                                <Link key={index} href={link} >      
+                                    <a>
+                                        <Button className="text-light" color="primary">
+                                            Website
+                                        </Button>
+                                    </a>
+                                </Link>
+                            ))}
                         </Col>
                     </Row>
                 </Container>

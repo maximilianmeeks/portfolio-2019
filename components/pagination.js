@@ -33,9 +33,9 @@ function Pagination (props) {
     );
 }
 
-Pagination.propTypes = {
+/* Pagination.propTypes = {
     classes: PropTypes.object.isRequired,
-};
+}; */
 
 
 export default Pagination;
