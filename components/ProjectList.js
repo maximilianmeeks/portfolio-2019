@@ -2,8 +2,9 @@ import React, {Component, Fragment} from "react";
 import { Container, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button, Row, Col } from "reactstrap";
 import Link from "next/link";
-import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+import Loading from "../components/Loading";
 
 
 const allProjects = gql`
@@ -27,7 +28,7 @@ export default function ProjectList () {
         <Query query={allProjects}>
         {({ loading, error, data:{projects} }) => {
           if (loading) return <div className="container">
-                                  <p>Loading...</p>
+                                  <Loading/>
                               </div>;
           if (error) return <div className="container">
                                   <p>Error :(</p>

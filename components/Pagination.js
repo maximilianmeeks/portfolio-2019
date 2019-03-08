@@ -15,7 +15,7 @@ function Pagination(props) {
                 </Button>
             </Link>
             <Link prefetch href={{pathname: '/project', query: {slug: next ? next.slug : null}}} as={`/${next.slug}`}>
-                <Button>
+                <Button className="ml-5">
                     Next Project
                 </Button>
             </Link>
