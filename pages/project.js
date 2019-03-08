@@ -68,7 +68,7 @@ class Project extends Component {
             <Fragment> 
                 <Container>
                     <Row>
-                        <Col className="mx-auto my-3 text-center">
+                        <Col className="mx-auto mb-4 text-center">
                             <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
                                 {({loading, data: {previousProject, nextProject}}) => {
                                     if (loading) return <Loading/>
@@ -81,12 +81,12 @@ class Project extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="11" className="mx-auto text-center">
-                            <h1 className="text-primary mx-auto font-weight-bold">{projects[0].title}</h1>
+                        <Col xs="11" className="mx-auto text-right">
+                            <h1 className="text-primary mx-auto font-weight-light">{projects[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="11" className="mx-auto mb-4 text-center">
+                        <Col xs="11" className="mx-auto mb-4 text-right">
                             <span className="text-secondary mx-auto">{projects[0].subheading}</span>
                         </Col>
                     </Row>                   
@@ -98,6 +98,19 @@ class Project extends Component {
                     <Row>
                         <Col xs="11" className="mx-auto my-3">
                         <p>{projects[0].description}</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="6">
+                                <h5>Technologies</h5>
+                                <p className="text-primary">{projects[0].technologies.map((technology, index) => (
+                                    <ul>
+                                        <li key={index}>{technology}</li>
+                                    </ul>
+                                ))}</p>
+                        </Col>
+                        <Col xs="6">
+                        
                         </Col>
                     </Row>
                 </Container>
