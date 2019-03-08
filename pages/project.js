@@ -121,6 +121,8 @@ class Project extends Component {
                                 ))}       
                             </Col> 
                     </Row>
+
+
                     <Row className="my-4">
                         <Col className="d-flex justify-content-center">
                             {projects[0].links.map((link, index) => (
