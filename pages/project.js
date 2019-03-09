@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from "react";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col, Button} from "reactstrap";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Link from "next/link";
 import Layout from "../components/Layout";
 import Pagination from "../components/pagination";
 import Loading from "../components/loading";
+import CustomCarousel from "../components/Carousel";
 
 
 export const allProjectsQuery = gql`
@@ -22,6 +23,16 @@ export const allProjectsQuery = gql`
             links
 
             cover{
+                id
+                handle
+            }
+
+            image2{
+                id
+                handle
+            }
+
+            image3{
                 id
                 handle
             }
@@ -43,6 +54,30 @@ export const PaginationQuery = gql`
         }
     }
 `
+
+const enums = {
+    Html: "HTML",
+    Css: "CSS",
+    Scss: "SCSS",
+    JQuery: "jQuery",
+    Photoshop: "Adobe Photoshop",
+    Illustrator: "Adobe Illustrator",
+    InDesign: "Adobe InDesign",
+    Vectorworks: "Nemetschek Vectorworks",
+    AfterEffects: "Adobe AfterEffects",
+    MongoDB: "MongoDB",
+    Node_js: "Node.js",
+    React: "React",
+    Next_js: "Next.js",
+    Bootstrap: "Bootstrap 4",
+    Development: "Development",
+    Illustration: "Illustration",
+    Lighting: "Lighting",
+    Layout: "Layout",
+    Motion_Design:"Motion Design",
+    Video_Edition:"Video Editing",
+    Graphic_Design:"Graphic Design"
+}
 
 
 class Project extends Component {
@@ -92,7 +127,17 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="11" className="mx-auto">
-                            <img className="img-fluid border" src= {`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} />
+                        <img src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt="{item.altText}" className="img-fluid"/>
+{/*                         <CustomCarousel 
+                            item={projects[0].cover}
+
+                            item2={projects[0].image2 != null ?  
+                                projects[0].image2 : null}
+                                
+                            item3={projects[0].image3 != null ? 
+                                projects[0].image3 : null}
+                            /> */}
+                
                         </Col>
                     </Row>
                     <Row>
@@ -107,23 +152,23 @@ class Project extends Component {
                                     
                                         {projects[0].technologies.map((technology, index) => (
                                             <ul className="text-secondary list-group list-group-flush text-right">
-                                                <li key={index} className="list-group-item bg-light">{technology}</li>
+                                                <li key={index} className="list-group-item bg-light">{enums[technology.toString()]}</li>
                                             </ul>
                                         ))}
                                     
                             </Col>
                             <Col xs="6">
-                            <h5 className="text-right">Categories</h5>  
+                            <h5 className="text-right">Categories</h5>
+                           
                                 {projects[0].skills.map((skill, index) => (
                                     <ul className="text-secondary list-group list-group-flush text-right">
-                                        <li key={index} className="list-group-item bg-light">{skill}</li>
+                                        <li key={index} className="list-group-item bg-light">{enums[skill.toString()]}</li>
                                     </ul>
                                 ))}       
                             </Col> 
                     </Row>
 
-
-                    <Row className="my-4">
+                   <Row className="my-4">
                         <Col className="d-flex justify-content-center">
                             {projects[0].links.map((link, index) => (
                                 <Link key={index} href={link} >      
