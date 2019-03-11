@@ -10,8 +10,28 @@ import {
         Col,
         Row } from 'reactstrap';
 
+function headerHandler (props) {
+    if (props.header===true){
+        return  <Link href="/">
+                <Header />
+                </Link>
+    } else {
+        return null
+    }
+}
+
+function menuHandler (props) {
+    if (props.menu===true){
+        return <Menu/>
+    } else {
+        return null
+    }
+}
+
 class Layout extends Component {
+
     render() {
+        
         return(
             <Fragment>
                 <Head>
@@ -22,10 +42,9 @@ class Layout extends Component {
                 </Head>
                 
                 <Container>
-                    <Link href="/">
-                        <Header />
-                    </Link>
-                    <Menu/>
+                    {headerHandler(this.props)}
+                    {menuHandler(this.props)}
+                    
                     <Container>
                         <Row>
                             <Col className="bg-light px-0" lg="12">

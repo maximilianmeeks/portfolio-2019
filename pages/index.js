@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import {Container, Row, Col} from "reactstrap";
 
 const Index = () => (
-        <Layout>
+        <Layout header={false} menu={false}>
             <Container className="vh-100">
                 <Row className="h-100 justify-content-center align-items-center">
                     <Col xs="12" className="d-flex justify-content-center align-items-center">

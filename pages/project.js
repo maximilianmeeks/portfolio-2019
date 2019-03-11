@@ -89,7 +89,7 @@ class Project extends Component {
     const {query} = this.props    
     
     return(
-        <Layout>
+        <Layout header={true} menu={true}>
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
             {({ loading, error, data:{projects} }) => {
             if (loading) return <div className="container">
@@ -127,8 +127,8 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="11" className="mx-auto">
-                        <img src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt="{item.altText}" className="img-fluid"/>
-{/*                         <CustomCarousel 
+                        
+                         <CustomCarousel 
                             item={projects[0].cover}
 
                             item2={projects[0].image2 != null ?  
@@ -136,7 +136,7 @@ class Project extends Component {
                                 
                             item3={projects[0].image3 != null ? 
                                 projects[0].image3 : null}
-                            /> */}
+                            /> 
                 
                         </Col>
                     </Row>
@@ -152,7 +152,7 @@ class Project extends Component {
                                     
                                         {projects[0].technologies.map((technology, index) => (
                                             <ul className="text-secondary list-group list-group-flush text-right">
-                                                <li key={index} className="list-group-item bg-light">{enums[technology.toString()]}</li>
+                                                <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
                                             </ul>
                                         ))}
                                     
@@ -162,7 +162,7 @@ class Project extends Component {
                            
                                 {projects[0].skills.map((skill, index) => (
                                     <ul className="text-secondary list-group list-group-flush text-right">
-                                        <li key={index} className="list-group-item bg-light">{enums[skill.toString()]}</li>
+                                        <li key={index} className="list-group-item bg-light pr-0">{enums[skill.toString()]}</li>
                                     </ul>
                                 ))}       
                             </Col> 

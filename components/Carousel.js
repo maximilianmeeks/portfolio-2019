@@ -45,7 +45,7 @@ class CustomCarousel extends Component {
 
 
   render() {
-    let items = [];
+    let items2 = [];
     function addImage(image) {
       items.push(image);
       
@@ -62,39 +62,39 @@ class CustomCarousel extends Component {
     }
    
     const { activeIndex } = this.state;
-    addImage(this.props.item);
+/*     addImage(this.props.item);
     addImage(this.props.item2);
-    addImage(this.props.item3);
+    addImage(this.props.item3); */
    
     
-    let items2 = [
+    let items = [
       {
-        src: `${this.props.item}`,
+        handle: `${this.props.item.handle}`,
         altText: 'Slide 1',
         caption: 'Slide 1'
       },
       {
-        src: `${this.props.item2}`,
+        handle: `${this.props.item.handle}`,
         altText: 'Slide 2',
         caption: 'Slide 2'
       },
       {
-        src: `${this.props.item3}`,
+        handle: `${this.props.item.handle}`,
         altText: 'Slide 3',
         caption: 'Slide 3'
       }
     ];
-    const slides = items.map((index) => {
+    const slides = items.map((item) => {
       return (
-        console.log(key={index})
-/*         <CarouselItem
+        
+        <CarouselItem
           onExiting={this.onExiting}
           onExited={this.onExited}
           key={item.handle}
         >
           <img src={`https://media.graphcms.com/resize=width:400/${item.handle}`} alt={item.altText} />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-        </CarouselItem> */
+        </CarouselItem>
       );
     });
 

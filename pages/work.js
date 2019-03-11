@@ -4,7 +4,7 @@ import ProjectList from "../components/ProjectList";
 
 
 export default () => (
-    <Layout>
+    <Layout header={true} menu={true}>
         <ProjectList/>
     </Layout>
 )

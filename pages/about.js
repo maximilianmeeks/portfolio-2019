@@ -6,7 +6,7 @@ import { Container } from "reactstrap";
 export default class extends Component{
     render(){
         return(
-    <Layout>
+    <Layout header={true} menu={true}>
         <Container>
             <p>about</p>
         </Container> 
