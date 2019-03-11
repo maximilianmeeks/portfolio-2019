@@ -6,11 +6,11 @@ import { Container } from "reactstrap";
 export default class extends Component{
     render(){
         return(
-    <Layout header={true} menu={true}>
-        <Container>
-            <p>about</p>
-        </Container> 
-    </Layout>
+            <Layout header={true} menu={true}>
+                <Container>
+                    <p>about</p>
+                </Container> 
+            </Layout>
         )
     }
 }

@@ -79,15 +79,37 @@ const enums = {
     Graphic_Design:"Graphic Design"
 }
 
+function image2Handler (props) {
+    if (props.image2 != null) {
+       return <Row>
+                <Col xs="11" className="mx-auto">
+                    <img className="img-fluid mb-3 border" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`}/>
+                </Col>
+            </Row>
+    } 
+} 
+
+function image3Handler (props) {
+    if (props.image3 != null) {
+        return <Row>
+                 <Col xs="11" className="mx-auto">
+                     <img className="img-fluid mb-3 border" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`}/>
+                 </Col>
+             </Row>
+             } else {
+        return null
+    }  
+} 
 
 class Project extends Component {
     static getInitialProps({query}) {
         const isServer = typeof window === "undefined";
         return {isServer, query};
     }
+
     render(){
     const {query} = this.props    
-    
+        
     return(
         <Layout header={true} menu={true}>
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
@@ -109,7 +131,9 @@ class Project extends Component {
                                     if (loading) return <Loading/>
                                     if (error) return <Error/>
                                     return (
+                                        
                                         <Pagination previous={previousProject[0]} next={nextProject[0]}/> 
+                                        
                                     )
                                 }}
                             </Query>
@@ -127,17 +151,7 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="11" className="mx-auto">
-                        
-                         <CustomCarousel 
-                            item={projects[0].cover}
-
-                            item2={projects[0].image2 != null ?  
-                                projects[0].image2 : null}
-                                
-                            item3={projects[0].image3 != null ? 
-                                projects[0].image3 : null}
-                            /> 
-                
+                            <img className="img-fluid border" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} /* alt={item.altText} */ />               
                         </Col>
                     </Row>
                     <Row>
@@ -146,26 +160,32 @@ class Project extends Component {
                             <p className="text-right">{projects[0].year}</p>
                         </Col>
                     </Row>
-                    <Row>
-                            <Col xs="6">
-                                    <h5 className="text-right">Technologies</h5>
-                                    
-                                        {projects[0].technologies.map((technology, index) => (
-                                            <ul className="text-secondary list-group list-group-flush text-right">
-                                                <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
-                                            </ul>
-                                        ))}
-                                    
-                            </Col>
-                            <Col xs="6">
-                            <h5 className="text-right">Categories</h5>
-                           
-                                {projects[0].skills.map((skill, index) => (
-                                    <ul className="text-secondary list-group list-group-flush text-right">
-                                        <li key={index} className="list-group-item bg-light pr-0">{enums[skill.toString()]}</li>
-                                    </ul>
-                                ))}       
-                            </Col> 
+                        {image2Handler(projects[0])}
+                        {image3Handler(projects[0])}
+                    <Row className="mt-4">
+                        <Col xs="11" className="mx-auto">
+                            <Row>
+                                <Col xs="6">
+                                <h5 >Categories</h5>
+                            
+                                    {projects[0].skills.map((skill, index) => (
+                                        <ul className="text-secondary list-group list-group-flush ">
+                                            <li key={index} className="list-group-item bg-light pl-0">{enums[skill.toString()]}</li>
+                                        </ul>
+                                    ))}       
+                                </Col>
+                                <Col xs="6">
+                                        <h5 className="text-right">Technologies</h5>
+                                        
+                                            {projects[0].technologies.map((technology, index) => (
+                                                <ul className="text-secondary list-group list-group-flush text-right">
+                                                    <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
+                                                </ul>
+                                            ))}
+                                        
+                                </Col>
+                            </Row> 
+                        </Col>
                     </Row>
 
                    <Row className="my-4">

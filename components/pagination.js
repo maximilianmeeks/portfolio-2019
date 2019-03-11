@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Container, Row, Col } from "reactstrap";
 
+
+function buttonToggler(props){
+    if (props.previous!=null){
+        
+    }
+}
 
 function Pagination (props) {
     const {previous, next} = props;
