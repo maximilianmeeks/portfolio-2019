@@ -59,8 +59,7 @@ export const PaginationQuery = gql`
 
 const enums = {
     Html: "HTML",
-    Css: "CSS",
-    Scss: "SCSS",
+    Css: "CSS/SCSS",
     JQuery: "jQuery",
     Javascript: "Javascript",
     Photoshop: "Adobe Photoshop",
