@@ -4,7 +4,7 @@ import {
     Navbar,
     NavbarToggler,
     Nav,
-    NavItem,} from 'reactstrap';
+    NavItem} from 'reactstrap';
 import Link from "next/link";
 
 
@@ -24,6 +24,7 @@ class Menu extends Component{
       }
     render(){
         return(
+            
             <Navbar color="light" light expand="md" className="pb-4">
                         
             <NavbarToggler onClick={this.toggle} className="ml-auto"/>
@@ -31,21 +32,21 @@ class Menu extends Component{
                 <Nav className="mx-auto" navbar>
                 <NavItem>
                     <Link href="/about" >
-                        <a className="nav-link">
+                        <a className="nav-link text-right">
                            About
                         </a>
                     </Link>
                 </NavItem>
                 <NavItem>
                     <Link href="/work" >
-                        <a className="nav-link">
+                        <a className="nav-link text-right">
                             Work
                         </a>
                     </Link>
                 </NavItem>
                 <NavItem>
                     <Link href="/contact" >
-                        <a className="nav-link">
+                        <a className="nav-link text-right">
                            Contact
                         </a>
                     </Link>
@@ -53,6 +54,7 @@ class Menu extends Component{
                 </Nav>
             </Collapse>
         </Navbar>
+        
         )
     }
 }

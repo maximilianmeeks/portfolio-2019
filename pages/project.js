@@ -6,7 +6,6 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Pagination from "../components/pagination";
 import Loading from "../components/loading";
-import CustomCarousel from "../components/Carousel";
 
 
 export const allProjectsQuery = gql`
@@ -25,16 +24,19 @@ export const allProjectsQuery = gql`
             cover{
                 id
                 handle
+                alt
             }
 
             image2{
                 id
                 handle
+                alt
             }
 
             image3{
                 id
                 handle
+                alt
             }
         }
     }
@@ -60,6 +62,7 @@ const enums = {
     Css: "CSS",
     Scss: "SCSS",
     JQuery: "jQuery",
+    Javascript: "Javascript",
     Photoshop: "Adobe Photoshop",
     Illustrator: "Adobe Illustrator",
     InDesign: "Adobe InDesign",
@@ -81,21 +84,21 @@ const enums = {
 
 function image2Handler (props) {
     if (props.image2 != null) {
-       return <Row>
-                <Col xs="11" className="mx-auto">
-                    <img className="img-fluid mb-3 border" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`}/>
+       return <Col xs="11" md="6" className="mx-auto">
+                    <img className="img-fluid mb-3 border d-md-none" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
+                    <img className="img-fluid mb-3 border d-none d-md-block" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
                 </Col>
-            </Row>
+            
     } 
 } 
 
 function image3Handler (props) {
     if (props.image3 != null) {
-        return <Row>
-                 <Col xs="11" className="mx-auto">
-                     <img className="img-fluid mb-3 border" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`}/>
-                 </Col>
-             </Row>
+        return <Col xs="11" md="6" className="mx-auto">
+                     <img className="img-fluid mb-3 border d-md-none" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
+                     <img className="img-fluid mb-3 border d-none d-md-block" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
+                </Col>
+             
              } else {
         return null
     }  
@@ -125,7 +128,7 @@ class Project extends Component {
             <Fragment> 
                 <Container>
                     <Row>
-                        <Col className="mx-auto mb-4 text-center">
+                        <Col xs="11" className="mx-auto mb-4 text-center">
                             <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
                                 {({loading, data: {previousProject, nextProject}}) => {
                                     if (loading) return <Loading/>
@@ -151,19 +154,55 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="11" className="mx-auto">
-                            <img className="img-fluid border" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} /* alt={item.altText} */ />               
+                            <img className="img-fluid border d-md-none" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
+                            <img className="img-fluid border d-none d-md-block mb-md-4" src={`https://media.graphcms.com/resize=width:1000/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
                         </Col>
+
                     </Row>
                     <Row>
-                        <Col xs="11" className="mx-auto my-3">
-                            <p>{projects[0].description}</p>
-                            <p className="text-right">{projects[0].year}</p>
+                        <Col xs="11" className="mx-auto">
+                            <Row>
+                                <Col xs="12" md="9" className="mx-auto my-3">
+                                    <p>{projects[0].description}</p>
+                                    <p className="text-right">{projects[0].year}</p>
+                                    <div className="d-none d-md-block">
+                                        {projects[0].links.map((link, index) => (
+                                            <Link key={index} href={link} >      
+                                                <a>
+                                                    <Button className="text-light" color="primary">
+                                                        Website
+                                                    </Button>
+                                                </a>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </Col>
+                                <Col md="3" className="d-none d-md-block">
+                                    <h5 className="text-right">Technologies</h5>
+                                                    
+                                                    {projects[0].technologies.map((technology, index) => (
+                                                        <ul className="text-secondary list-group list-group-flush text-right">
+                                                            <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
+                                                        </ul>
+                                                    ))}
+                                    <h5 className="text-right mt-5">Categories</h5>
+                                        
+                                        {projects[0].skills.map((skill, index) => (
+                                            <ul className="text-secondary list-group list-group-flush text-right">
+                                                <li key={index} className="list-group-item bg-light pr-0">{enums[skill.toString()]}</li>
+                                            </ul>
+                                        ))}  
+                                </Col>
+                            </Row>
                         </Col>
+
                     </Row>
+                    <Row>
                         {image2Handler(projects[0])}
                         {image3Handler(projects[0])}
+                    </Row>
                     <Row className="mt-4">
-                        <Col xs="11" className="mx-auto">
+                        <Col xs="11" className="mx-auto d-md-none">
                             <Row>
                                 <Col xs="6">
                                 <h5 >Categories</h5>
@@ -188,7 +227,7 @@ class Project extends Component {
                         </Col>
                     </Row>
 
-                   <Row className="my-4">
+                   <Row className="my-4 d-md-none">
                         <Col className="d-flex justify-content-center">
                             {projects[0].links.map((link, index) => (
                                 <Link key={index} href={link} >      
@@ -199,6 +238,21 @@ class Project extends Component {
                                     </a>
                                 </Link>
                             ))}
+                        </Col>
+                    </Row>
+                    <Row className="d-none d-md-block mt-5">
+                        <Col xs="11" className="mx-auto mb-4 text-center">
+                            <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
+                                {({loading, data: {previousProject, nextProject}}) => {
+                                    if (loading) return <Loading/>
+                                    if (error) return <Error/>
+                                    return (
+                                        
+                                        <Pagination previous={previousProject[0]} next={nextProject[0]}/> 
+                                        
+                                    )
+                                }}
+                            </Query>
                         </Col>
                     </Row>
                 </Container>

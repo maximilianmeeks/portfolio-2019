@@ -3,18 +3,13 @@ import Link from 'next/link';
 import { Container, Row, Col } from "reactstrap";
 
 
-function buttonToggler(props){
-    if (props.previous!=null){
-        
-    }
-}
 
 function Pagination (props) {
     const {previous, next} = props;
 
     return (
         <Container>
-            <Row /* className="d-flex justify-content-center align-items-center mx-0" */>
+            <Row >
                 <Col xs="12" className="d-flex justify-content-between align-items-center">
                 <Link prefetch passHref href={{pathname: '/project', query: {slug: previous ? previous.slug : null}}}>
                     <a className="d-flex justify-content-center align-items-center">
@@ -38,9 +33,6 @@ function Pagination (props) {
     );
 }
 
-/* Pagination.propTypes = {
-    classes: PropTypes.object.isRequired,
-}; */
 
 
 export default Pagination;

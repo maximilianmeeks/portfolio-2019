@@ -13,7 +13,7 @@ import {
 function headerHandler (props) {
     if (props.header===true){
         return  <Link href="/">
-                <Header />
+                <Header/>
                 </Link>
     } else {
         return null
@@ -23,6 +23,7 @@ function headerHandler (props) {
 function menuHandler (props) {
     if (props.menu===true){
         return <Menu/>
+        
     } else {
         return null
     }
