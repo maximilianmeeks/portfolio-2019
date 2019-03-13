@@ -42,7 +42,7 @@ function ProjectList () {
                         <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}}>
                         <a>
                         <Card className="mb-4">
-                            <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt="Card image cap" />
+                            <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
                         </Card>
                         </a>
                         </Link>

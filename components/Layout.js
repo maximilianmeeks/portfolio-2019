@@ -42,7 +42,7 @@ class Layout extends Component {
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossOrigin="anonymous"/>
                 </Head>
                 
-                <Container>
+                <Container className="vh-100">
                     {headerHandler(this.props)}
                     {menuHandler(this.props)}
                     
