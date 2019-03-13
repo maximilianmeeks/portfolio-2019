@@ -9,7 +9,7 @@ const Header = () => (
         <a className="text-decoration-none">
             <h1 className="text-secondary text-right text-lowercase">Maximilian Meeks</h1>
             <div className="text-right">
-                <span className="text-primary text-right">Sick shit is gonna happen here</span>
+                <span className="text-primary text-right">Junior Full Stack Web Developer</span>
             </div>
         </a>
         </Link>

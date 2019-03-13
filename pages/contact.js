@@ -7,7 +7,7 @@ export default class extends Component{
     render(){
         return(
             <Layout header={true} menu={true}>
-                <Container>
+                <Container >
                     <h1 className="mb-4 text-primary">Contact me</h1>
                     <Form>
                         <FormGroup>
