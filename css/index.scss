@@ -22,6 +22,18 @@ body{
     height: 100vh
 }
 
+.vh-80{
+    height: 80vh
+}
+
 .loading{
     color: $secondary
+}
+
+#message{
+    height: 25vh;
+    
+    @include media-breakpoint-up(md){
+        height: 40vh
+    }
 }

@@ -1,46 +1,29 @@
 
 import Layout from '../components/Layout';
-import { Button, Form, FormGroup, Label, Input, FormText, Container } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
 import React, { Component } from "react";
 
 export default class extends Component{
     render(){
         return(
             <Layout header={true} menu={true}>
-                <Container >
-                    <h1 className="mb-4 text-primary">Contact me</h1>
-                    <Form>
-                        <FormGroup>
-                            <Label for="exampleEmail">Email</Label>
-                            <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-                        </FormGroup>
+                <Container className="vh-80">
                     
-                        <FormGroup>
-                            <Label for="exampleSelect">Select</Label>
-                            <Input type="select" name="select" id="exampleSelect">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </Input>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="message">Message</Label>
-                            <Input type="textarea" name="text" id="message" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="exampleFile">File</Label>
-                            <Input type="file" name="file" id="exampleFile" />
-                        <FormText color="muted">
-                            This is some placeholder block-level help text for the above input.
-                            It's a bit lighter and easily wraps to a new line.
-                        </FormText>
+                    <Form>
+                        <Row>
+                            <Col md="8" lg="6" className="mx-auto mt-3">
+                            <h1 className="mb-4 text-primary text-lowercase">Contact me</h1>
+                                <FormGroup>
+                                    <Input type="email" name="email" id="exampleEmail" placeholder="E-Mail" />
+                                </FormGroup>
+                                <FormGroup className="mb-5">
+                            <Input type="textarea" name="text" id="message" placeholder="Message (max. 1000 characters)" maxLength="1000"/>
                         </FormGroup>
 
-                        <Button className="text-light float-right">Submit</Button>
-                    </Form>
-                
+                        <Button className="text-light float-right mb-5" type="submit">Submit</Button> 
+                            </Col>
+                        </Row>
+                    </Form>  
                 </Container>
             </Layout>
             )
