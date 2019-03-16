@@ -1,9 +1,9 @@
 {
     "scripts": {
+        "start": "NODE_ENV=production nodemon server.js",
         "dev": "cross-env NODE_ENV=development nodemon server.js",
         "next": "next",
         "build": "next build",
-        "start": "next start",
         "now-build": "next build"
     },
     "dependencies": {
@@ -42,6 +42,7 @@
         "webpack": "^4.29.6"
     },
     "devDependencies": {
+        "babel-plugin-inline-react-svg": "^1.0.1",
         "cross-env": "^5.2.0"
     }
 }
