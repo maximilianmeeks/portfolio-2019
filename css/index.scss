@@ -31,7 +31,7 @@ body{
 }
 
 .spin{
-    width: 10%;
+    width: 40%;
 
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
@@ -61,6 +61,15 @@ body{
             transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
         }
     } 
+
+
+    @include media-breakpoint-up(md){
+        width: 30%;
+    }
+
+    @include media-breakpoint-up(lg){
+        width: 20%;
+    }
 }
 
 #message{

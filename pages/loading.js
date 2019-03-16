@@ -10,7 +10,6 @@ export default class extends Component{
             <Layout header={true} menu={true}>
                 <Container>
                     <Loading/>
-                    <p>about</p>
                 </Container> 
             </Layout>
         )

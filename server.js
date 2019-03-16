@@ -36,6 +36,9 @@ app.prepare().then(function() {
     return app.render(req, res, '/contact')
   })
 
+  server.get('/loading', (req, res) => {
+    return app.render(req, res, '/loading')
+  })
 
   server.get('/project:slug', (req, res) => {
     const queryParams = {
