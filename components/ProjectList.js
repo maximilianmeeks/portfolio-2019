@@ -22,6 +22,23 @@ const allProjects = gql`
   }
 `
 
+const graphicDesignFilter = gql`
+query{
+    projects(where: {
+        filter_in: ["Graphic Design"]
+       })    {
+        id
+        title
+        slug
+        
+        cover{
+            id
+            handle
+        }
+    }
+}
+`
+
 function ProjectList () {
     return(
         <Query query={allProjects}>
