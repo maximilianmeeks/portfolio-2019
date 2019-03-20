@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "reactstrap";
-import Spirale from "../svgs/spirale2.svg";
+import Spirale from "../svgs/portfolio_sonne.svg";
+import Sun from "../svgs/circle.svg";
 
 const Header = () => (
     
     <Container className="bg-light">
-        <Spirale id="header-icon" className="spin mt-3"/> 
+        <Spirale id="header-icon" className="spin"/>
+        <Sun id="sun" className="spin-inverse"/>
         <Link href="/">
         <a className="text-decoration-none">
             <h1 className="text-secondary text-right text-lowercase">Maximilian Meeks</h1>
