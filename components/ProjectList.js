@@ -11,7 +11,7 @@ import Filter from "./Filter";
 const allProjects = gql`
   query($category: String){
       projects(where: {
-          filter: $category
+          filter_contains: $category
         })  {
           id
           title
@@ -37,6 +37,7 @@ class ProjectList extends Component {
                 <Filter/>
             
                 <Query query={allProjects} variables={{category: category}}>
+                
                 {({ loading, error, data:{projects} }) => {
                 if (loading) return <div className="container">
                                         <Loading/>
@@ -51,7 +52,7 @@ class ProjectList extends Component {
                         <Row>  
                         {projects.map((project, index) => (
                             <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
-                                <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}}>
+                                <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}} as={`/project/${project.slug}`}>
                                     <a>
                                     <Card className="mb-4">
                                         <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
