@@ -5,15 +5,16 @@ import Link from "next/link";
 import Header from "./Header";
 import Menu from "./Menu";
 import Styles from "../css/index.scss";
+
 import {
         Container,
         Col,
-        Row } from 'reactstrap';
+        Row} from 'reactstrap';
 
 function headerHandler (props) {
     if (props.header===true){
         return  <Link href="/">
-                <Header/>
+                    <Header/>
                 </Link>
     } else {
         return null
@@ -28,6 +29,8 @@ function menuHandler (props) {
         return null
     }
 }
+
+
 
 class Layout extends Component {
 

@@ -48,6 +48,10 @@ app.prepare().then(function() {
     return app.render(req, res, '/project', queryParams)
   })
 
+  server.get('/work/:slug', (req, res) => {
+    return app.render(req, res, '/work', { slug: req.params.slug })
+  })
+
   server.post('/send', (req, res) => {
         const output = `
           <h3>Kontaktanfrage über dein Portfolio</h3>

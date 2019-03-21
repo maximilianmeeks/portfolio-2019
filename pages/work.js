@@ -5,7 +5,7 @@ import ProjectList from "../components/ProjectList";
 
 export default () => (
     <Layout header={true} menu={true}>
-        <ProjectList/>
+        <ProjectList className="pt-3"/>
     </Layout>
 )
 
