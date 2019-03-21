@@ -29,6 +29,11 @@ export default class Filter extends Component {
                     </Link>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
+                    <Link href={{pathname: '/work', query: {category: "layout"}}}  as={`/work/layout`}>
+                        <a>Layout</a>
+                    </Link>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
                     <Link href={{pathname: '/work', query: {category: "lighting"}}}  as={`/work/lighting`}>
                         <a>Lighting</a>
                     </Link>

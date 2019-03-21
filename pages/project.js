@@ -17,7 +17,7 @@ export const allProjectsQuery = gql`
             subheading
             description
             year
-            skills
+            categories
             technologies
             links
 
@@ -105,7 +105,6 @@ function image3Handler (props) {
 
 class Project extends Component {
     static getInitialProps({query}) {
-        console.log({query})
         const isServer = typeof window === "undefined";
         return {isServer, query};
     }
@@ -186,9 +185,11 @@ class Project extends Component {
                                                     ))}
                                     <h5 className="text-right mt-5">Categories</h5>
                                         
-                                        {projects[0].skills.map((skill, index) => (
+                                        {projects[0].categories.map((category, index) => (
                                             <ul className="text-secondary list-group list-group-flush text-right">
-                                                <li key={index} className="list-group-item bg-light pr-0">{enums[skill.toString()]}</li>
+                                                <Link prefetch href={{pathname: '/work', query: {category: enums[category.toString().toLowerCase()]}}} as={`/project/${enums[category.toString().toLowerCase()]}`}>
+                                                    <li key={index} className="list-group-item bg-light pr-0">{enums[category.toString()]}</li>
+                                                </Link>
                                             </ul>
                                         ))}  
                                 </Col>
@@ -206,9 +207,11 @@ class Project extends Component {
                                 <Col xs="6">
                                 <h5 >Categories</h5>
                             
-                                    {projects[0].skills.map((skill, index) => (
+                                    {projects[0].categories.map((category, index) => (
                                         <ul className="text-secondary list-group list-group-flush ">
-                                            <li key={index} className="list-group-item bg-light pl-0">{enums[skill.toString()]}</li>
+                                            <Link prefetch href={{pathname: '/work', query: {category: enums[category.toString().toLowerCase()]}}} as={`/project/${enums[category.toString().toLowerCase()]}`}>
+                                                <li key={index} className="list-group-item bg-light pl-0">{enums[category.toString()]}</li>
+                                            </Link>
                                         </ul>
                                     ))}       
                                 </Col>
