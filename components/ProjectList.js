@@ -25,21 +25,6 @@ const allProjects = gql`
   }
 `
 
-const graphicDesignFilter = gql`
-query($slug: String){
-    projects(where: {
-        filter_in: [$slug]
-       })    {
-        id
-        title
-        slug
-        cover{
-            id
-            handle
-        }
-    }
-}
-`
 
 class ProjectList extends Component {
     
