@@ -48,22 +48,22 @@ app.prepare().then(function() {
     return app.render(req, res, '/project', queryParams)
   })
 
-server.post('/send', (req, res) => {
-      const output = `
-        <h3>Kontaktanfrage über dein Portfolio</h3>
-        <h4>Kontaktdaten:</h4>
-        <p>Name: ${req.body.name}</p>
-        <p>E-Mail: ${req.body.email}</p>
-        <p>Nachricht: ${req.body.text}</p>
-        <p>🙋</p>
-      `;
-       res.send(helper(output));
-})
+  server.post('/send', (req, res) => {
+        const output = `
+          <h3>Kontaktanfrage über dein Portfolio</h3>
+          <h4>Kontaktdaten:</h4>
+          <p>Name: ${req.body.name}</p>
+          <p>E-Mail: ${req.body.email}</p>
+          <p>Nachricht: ${req.body.text}</p>
+          <p>🙋</p>
+        `;
+        res.send(helper(output));
+  })
 
-server.listen(port, function(err) {
-      if (err) {
-        throw err;
-      }
-      console.log('> Ready on http://localhost:' + port);
-    });
+  server.listen(port, function(err) {
+        if (err) {
+          throw err;
+        }
+        console.log('> Ready on http://localhost:' + port);
+      });
 })

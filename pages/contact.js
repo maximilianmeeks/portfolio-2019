@@ -5,38 +5,12 @@ import React, { Component } from "react";
 import axios from "axios";
 
 
-
-
 export default class extends Component{
 
-/*     handleSubmit(e){
-        e.preventDefault();
-
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        axios({
-            method: "POST", 
-            url:"/send", 
-            data: { 
-                email: email,  
-                message: message
-            }
-        }).then((response)=>{
-            if (response.data.msg === 'success'){
-                alert("Message Sent."); 
-                this.resetForm()
-            }else if(response.data.msg === 'fail'){
-                alert("Message failed to send.")
-            }
-        })
-    }
-    resetForm(){
-        document.getElementById('contact-form').reset();
-    } */
     render(){
         return(
             <Layout header={true} menu={true}>
-                <Container className="vh-80">
+                <Container className="vh-100">
                     
                     <Form id="contact-form" /* onSubmit={this.handleSubmit.bind(this)} */ action="send" method="POST">
                         <Row>
@@ -63,4 +37,7 @@ export default class extends Component{
             )
     }
 }
+
+
+
 
