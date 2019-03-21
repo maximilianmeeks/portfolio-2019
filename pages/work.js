@@ -5,8 +5,8 @@ import ProjectList from "../components/ProjectList";
 
 class Works extends React.Component{
     static async getInitialProps({ query }) {
-        console.log('SLUG', query.category)
-        return {query}
+        const isServer = typeof window === "undefined";
+        return {isServer, query};
     } 
     render(){
         const {query} = this.props   
