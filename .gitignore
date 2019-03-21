@@ -1,3 +1,5 @@
 .next/
 node_modules/
 .env
+.idea
+portfolio-2019.iml

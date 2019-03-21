@@ -30,7 +30,6 @@ query{
         id
         title
         slug
-        
         cover{
             id
             handle
@@ -49,11 +48,11 @@ function ProjectList () {
           if (error) return <div className="container">
                                   <Error/>
                               </div>;
-  
+
           return  (
-              
+
             <Fragment>
-                <Row>  
+                <Row>
                 {projects.map((project, index) => (
                     <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
                         <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}}>

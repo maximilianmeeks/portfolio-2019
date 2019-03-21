@@ -7911,7 +7911,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "/home/dci/Development/portfolio-2019/.next");
+      source_map_support_1.rewriteStacktrace(error, "/Users/renefuchtenkordt/IdeaProjects/portfolio-2019/.next");
       return error;
     }
   };
@@ -10693,33 +10693,13 @@ var index = typeof fetch=='function' ? fetch.bind() : function(url, options) {
 /***/ }),
 
 /***/ "./node_modules/next/node_modules/webpack/buildin/global.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
+/*!************************************************************************************************************************!*\
+  !*** delegated ./node_modules/next/node_modules/webpack/buildin/global.js from dll-reference dll_d07fc6fef0019ab91fb7 ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
+module.exports = (__webpack_require__(/*! dll-reference dll_d07fc6fef0019ab91fb7 */ "dll-reference dll_d07fc6fef0019ab91fb7"))("./node_modules/next/node_modules/webpack/buildin/global.js");
 
 /***/ }),
 
@@ -10770,12 +10750,12 @@ module.exports = __webpack_require__(/*! ./dist/client/router */ "./node_modules
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_92862a29917dee4fb2b1 ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_d07fc6fef0019ab91fb7 ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_92862a29917dee4fb2b1 */ "dll-reference dll_92862a29917dee4fb2b1"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_d07fc6fef0019ab91fb7 */ "dll-reference dll_d07fc6fef0019ab91fb7"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -11521,12 +11501,12 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_92862a29917dee4fb2b1 ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_d07fc6fef0019ab91fb7 ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_92862a29917dee4fb2b1 */ "dll-reference dll_92862a29917dee4fb2b1"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_d07fc6fef0019ab91fb7 */ "dll-reference dll_d07fc6fef0019ab91fb7"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -17277,7 +17257,7 @@ module.exports = "!function(e){function t(n){if(u[n])return u[n].exports;var r=u
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.3
+/** @license React v16.8.4
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -17527,12 +17507,12 @@ if (false) {} else {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_92862a29917dee4fb2b1 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_d07fc6fef0019ab91fb7 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_92862a29917dee4fb2b1 */ "dll-reference dll_92862a29917dee4fb2b1"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_d07fc6fef0019ab91fb7 */ "dll-reference dll_d07fc6fef0019ab91fb7"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -19113,19 +19093,19 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/dci/Development/portfolio-2019/node_modules/next/dist/client/next-dev */"./node_modules/next/dist/client/next-dev.js");
+module.exports = __webpack_require__(/*! /Users/renefuchtenkordt/IdeaProjects/portfolio-2019/node_modules/next/dist/client/next-dev */"./node_modules/next/dist/client/next-dev.js");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_92862a29917dee4fb2b1":
+/***/ "dll-reference dll_d07fc6fef0019ab91fb7":
 /*!*******************************************!*\
-  !*** external "dll_92862a29917dee4fb2b1" ***!
+  !*** external "dll_d07fc6fef0019ab91fb7" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_92862a29917dee4fb2b1;
+module.exports = dll_d07fc6fef0019ab91fb7;
 
 /***/ })
 
