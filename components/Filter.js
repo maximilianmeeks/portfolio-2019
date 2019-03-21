@@ -9,7 +9,7 @@ export default class Filter extends Component {
         return(
             <Breadcrumb>
                 <BreadcrumbItem active>
-                    <Link href={{pathname: '/work', query: {category: "all"}}} >
+                    <Link href={{pathname: '/work'}} >
                         <a>All Projects</a>
                     </Link>
                 </BreadcrumbItem>
@@ -21,6 +21,11 @@ export default class Filter extends Component {
                 <BreadcrumbItem>
                     <Link href={{pathname: '/work', query: {category: "graphic-design"}}} >
                         <a>Graphic Design</a>
+                    </Link>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                    <Link href={{pathname: '/work', query: {category: "lighting"}}} >
+                        <a>Lighting</a>
                     </Link>
                 </BreadcrumbItem>
             </Breadcrumb>
