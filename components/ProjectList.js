@@ -40,12 +40,10 @@ query($slug: String){
 `
 
 class ProjectList extends Component {
-    static async getInitialProps({ query }) {
-        console.log('SLUG', query)
-        return {}
-    } 
-    render(){
-        
+
+    render(props){
+        const category = props
+        console.log(category)
     return(
         <Fragment>
             <Filter/>

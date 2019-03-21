@@ -48,7 +48,6 @@ class Layout extends Component {
                 <Container className="vh-100">
                     {headerHandler(this.props)}
                     {menuHandler(this.props)}
-                    
                     <Container>
                         <Row>
                             <Col className="bg-light px-0" lg="12">

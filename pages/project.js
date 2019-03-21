@@ -105,13 +105,13 @@ function image3Handler (props) {
 
 class Project extends Component {
     static getInitialProps({query}) {
+        console.log({query})
         const isServer = typeof window === "undefined";
         return {isServer, query};
     }
 
     render(){
     const {query} = this.props    
-        
     return(
         <Layout header={true} menu={true}>
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
