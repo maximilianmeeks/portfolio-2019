@@ -124,6 +124,34 @@ body{
     left: 6%;
 }
 
+.spacer{
+    height: 250px;
+
+    @include media-breakpoint-up(md){
+        height: 400px;
+    }
+
+    @include media-breakpoint-up(lg){
+        height: 500px;
+    }
+}
+
+.btn-filter-text{
+    color: $light;
+
+    &:hover{
+        color: $light
+    }
+
+    &:active{
+        color: $light
+    }
+
+    &:visited{
+        color: $light
+    }
+
+}
 
 /* .filter-button{
     background-color: $secondary;

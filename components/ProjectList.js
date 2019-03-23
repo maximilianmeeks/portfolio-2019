@@ -48,8 +48,8 @@ class ProjectList extends Component {
                     <Fragment>
                         <Row>  
                         {projects.map((project, index) => (
-                            <Col xs="10" md="6" lg="4" xl="3" className="mx-auto" key={index}>
-                                <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}} as={`/project/${project.slug}`}>
+                            <Col xs="12" md="6" lg="4" xl="3" className="mx-auto" key={index}>
+                                <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}}>
                                     <a>
                                     <Card className="mb-4">
                                         <CardImg top width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />

@@ -12,7 +12,7 @@ function Pagination(props) {
                 <Col xs="12" className="d-flex justify-content-between align-items-center">
                     {previous ?
                     <Link prefetch passHref
-                          href={{pathname: '/project', query: {slug: previous ? previous.slug : null}}} as={`/project/${previous.slug}`}>
+                          href={{pathname: '/project', query: {slug: previous ? previous.slug : null}}}>
                         <a className="d-flex justify-content-between align-items-center">
 
                             <i className="fas fa-angle-left text-secondary"></i>
@@ -22,7 +22,7 @@ function Pagination(props) {
                     </Link>
                     : <div/>}
                     {next &&
-                    <Link prefetch href={{pathname: '/project', query: {slug: next ? next.slug : null}}} as={`/project/${next.slug}`}>
+                    <Link prefetch href={{pathname: '/project', query: {slug: next ? next.slug : null}}}>
                         <a className="d-flex justify-content-center align-items-center">
 
                             <span className="text-secondary mr-2">next</span>

@@ -187,7 +187,7 @@ class Project extends Component {
                                         
                                         {projects[0].categories.map((category, index) => (
                                             <ul className="text-secondary list-group list-group-flush text-right">
-                                                <Link prefetch href={{pathname: '/work', query: {category: enums[category.toString().toLowerCase()]}}} as={`/project/${enums[category.toString().toLowerCase()]}`}>
+                                                <Link prefetch href={{pathname: '/work', query: {category: enums[category.toString().toLowerCase()]}}}>
                                                     <li key={index} className="list-group-item bg-light pr-0">{enums[category.toString()]}</li>
                                                 </Link>
                                             </ul>
@@ -209,7 +209,7 @@ class Project extends Component {
                             
                                     {projects[0].categories.map((category, index) => (
                                         <ul className="text-secondary list-group list-group-flush ">
-                                            <Link prefetch href={{pathname: '/work', query: {category: enums[category.toString().toLowerCase()]}}} as={`/project/${enums[category.toString().toLowerCase()]}`}>
+                                            <Link prefetch href={{pathname: '/work', query: {category: enums[category.toString().toLowerCase()]}}}>
                                                 <li key={index} className="list-group-item bg-light pl-0">{enums[category.toString()]}</li>
                                             </Link>
                                         </ul>

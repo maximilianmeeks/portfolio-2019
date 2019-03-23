@@ -9,43 +9,43 @@ export default class Filter extends Component {
         return(
             <Fragment>
 
-                            <Button outline className="btn btn-secondary my-1 mx-1" size="sm"> 
+                            <Button className="btn btn-secondary my-1 mx-1" size="sm"> 
                                 <Link href={{pathname: '/work'}} >
-                                    <a className="text-light text-decoration-none">All Projects</a>
+                                    <a className="text-light text-decoration-none btn-filter-text">All Projects</a>
                                 </Link>
                             </Button>
 
                         
                             <Button className="btn btn-secondary my-1 mx-1" size="sm"> 
-                                <Link href={{pathname: '/work', query: {category: "development"}}} as={`/work/development`}>
-                                    <a className="text-light text-decoration-none">Development</a>
+                                <Link href={{pathname: '/work', query: {category: "development"}}}>
+                                    <a className="text-light text-decoration-none btn-filter-text">Development</a>
                                 </Link>
                             </Button>
                                                 
                             <Button className="btn btn-secondary my-1 mx-1" size="sm">
-                                <Link href={{pathname: '/work', query: {category: "graphic-design"}}}  as={`/work/graphic-design`}>
-                                    <a className="text-light text-decoration-none">Graphic Design</a>
+                                <Link href={{pathname: '/work', query: {category: "graphic-design"}}}>
+                                    <a className="text-light text-decoration-none btn-filter-text">Graphic Design</a>
                                 </Link>
                             </Button>
                         
                         
                             <Button className="btn btn-secondary my-1 mx-1" size="sm">
-                                <Link href={{pathname: '/work', query: {category: "illustration"}}}  as={`/work/illustration`}>
-                                    <a className="text-light text-decoration-none">Illustration</a>
+                                <Link href={{pathname: '/work', query: {category: "illustration"}}}>
+                                    <a className="text-light text-decoration-none btn-filter-text">Illustration</a>
                                 </Link>
                             </Button>
                         
                         
                             <Button className="btn btn-secondary my-1 mx-1" size="sm">
-                                <Link href={{pathname: '/work', query: {category: "layout"}}}  as={`/work/layout`}>
-                                    <a className="text-light text-decoration-none">Layout</a>
+                                <Link href={{pathname: '/work', query: {category: "layout"}}}>
+                                    <a className="text-light text-decoration-none btn-filter-text">Layout</a>
                                 </Link>
                             </Button>
                         
                         
                             <Button className="btn btn-secondary my-1 mx-1" size="sm">
-                                <Link href={{pathname: '/work', query: {category: "lighting"}}}  as={`/work/lighting`}>
-                                    <a className="text-light text-decoration-none">Lighting</a>
+                                <Link href={{pathname: '/work', query: {category: "lighting"}}}>
+                                    <a className="text-light text-decoration-none btn-filter-text">Lighting</a>
                                 </Link>
                             </Button>
                                 

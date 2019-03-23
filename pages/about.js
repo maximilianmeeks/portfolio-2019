@@ -9,7 +9,19 @@ export default class extends Component{
             <Layout header={true} menu={true}>
                 <Container className="vh-80">
                     <Row>
-                        <Col xs="3"  className="mb-5">
+                        <Col xs="12" md="8" lg="6" className="mx-auto my-3">
+                            <h1 className="mb-4 text-primary text-lowercase">About me</h1>
+
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="12" md="8" lg="6" className="mx-auto mb-3">
+                        <p>Full stack web developer with a passion for design.</p>
+
+                        </Col>
+                    </Row>
+                    <Row>
+                    <Col xs="3"  className="mb-5">
                             <i className="fab fa-html5 fa-3x text-primary"></i>
                         </Col>
                         <Col xs="3"  className="mb-5">
@@ -31,9 +43,9 @@ export default class extends Component{
                             <i className="fab fa-adobe fa-3x text-primary"></i>
                         </Col>
                     </Row>
-                    <Row>
-                        <p>Full stack web developer with a passion for design.</p>
-                    </Row>
+
+                    
+
                 </Container> 
             </Layout>
         )

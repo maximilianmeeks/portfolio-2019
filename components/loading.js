@@ -1,14 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 import { Container, Row, Col, Spinner } from "reactstrap";
-import Spirale from "../svgs/spirale2.svg";
-import Abstract from "../svgs/abstract.svg"
 
-export default class Loading extends React.Component {
+export default class Loading extends Component {
     render() {
         return(
                 <Container className="vh-100">
-                    <Row className="h-100 justify-content-center align-items-center">
+                    <Row className="justify-content-center align-items-center">
                         <Col xs="12" className="d-flex justify-content-center align-items-center">
+                            <div className="spacer"></div>
                             <Spinner color="primary"/>
                         </Col>
                     </Row>
