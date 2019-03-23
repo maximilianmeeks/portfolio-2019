@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem} from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, Row, Col} from "reactstrap";
 import Link from "next/link";
 
 
@@ -7,38 +7,49 @@ export default class Filter extends Component {
 
     render() {
         return(
-            <Breadcrumb>
-                <BreadcrumbItem active>
-                    <Link href={{pathname: '/work'}} >
-                        <a>All Projects</a>
-                    </Link>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Link href={{pathname: '/work', query: {category: "development"}}} as={`/work/development`}>
-                        <a>Development</a>
-                    </Link>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Link href={{pathname: '/work', query: {category: "graphic-design"}}}  as={`/work/graphic-design`}>
-                        <a>Graphic Design</a>
-                    </Link>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Link href={{pathname: '/work', query: {category: "illustration"}}}  as={`/work/illustration`}>
-                        <a>Illustration</a>
-                    </Link>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Link href={{pathname: '/work', query: {category: "layout"}}}  as={`/work/layout`}>
-                        <a>Layout</a>
-                    </Link>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Link href={{pathname: '/work', query: {category: "lighting"}}}  as={`/work/lighting`}>
-                        <a>Lighting</a>
-                    </Link>
-                </BreadcrumbItem>   
-            </Breadcrumb>
+            <Fragment>
+
+                            <Button outline className="btn btn-secondary my-1 mx-1" size="sm"> 
+                                <Link href={{pathname: '/work'}} >
+                                    <a className="text-light text-decoration-none">All Projects</a>
+                                </Link>
+                            </Button>
+
+                        
+                            <Button className="btn btn-secondary my-1 mx-1" size="sm"> 
+                                <Link href={{pathname: '/work', query: {category: "development"}}} as={`/work/development`}>
+                                    <a className="text-light text-decoration-none">Development</a>
+                                </Link>
+                            </Button>
+                                                
+                            <Button className="btn btn-secondary my-1 mx-1" size="sm">
+                                <Link href={{pathname: '/work', query: {category: "graphic-design"}}}  as={`/work/graphic-design`}>
+                                    <a className="text-light text-decoration-none">Graphic Design</a>
+                                </Link>
+                            </Button>
+                        
+                        
+                            <Button className="btn btn-secondary my-1 mx-1" size="sm">
+                                <Link href={{pathname: '/work', query: {category: "illustration"}}}  as={`/work/illustration`}>
+                                    <a className="text-light text-decoration-none">Illustration</a>
+                                </Link>
+                            </Button>
+                        
+                        
+                            <Button className="btn btn-secondary my-1 mx-1" size="sm">
+                                <Link href={{pathname: '/work', query: {category: "layout"}}}  as={`/work/layout`}>
+                                    <a className="text-light text-decoration-none">Layout</a>
+                                </Link>
+                            </Button>
+                        
+                        
+                            <Button className="btn btn-secondary my-1 mx-1" size="sm">
+                                <Link href={{pathname: '/work', query: {category: "lighting"}}}  as={`/work/lighting`}>
+                                    <a className="text-light text-decoration-none">Lighting</a>
+                                </Link>
+                            </Button>
+                                
+                    </Fragment>
         )
     }
 }

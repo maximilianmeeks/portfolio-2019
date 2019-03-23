@@ -5,7 +5,6 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Loading from "./loading";
 import Error from "./error";
-import Filter from "./Filter";
 
 
 const allProjects = gql`
@@ -33,8 +32,6 @@ class ProjectList extends Component {
         
         return(
             <Fragment>
-            
-                <Filter/>
             
                 <Query query={allProjects} variables={{category: category}}>
                 
