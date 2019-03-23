@@ -125,14 +125,14 @@ body{
 }
 
 .spacer{
-    height: 250px;
+    height: 400px;
 
     @include media-breakpoint-up(md){
-        height: 400px;
+        height: 500px;
     }
 
     @include media-breakpoint-up(lg){
-        height: 500px;
+        height: 600px;
     }
 }
 

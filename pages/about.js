@@ -16,9 +16,9 @@ export default class extends Component{
                     </Row>
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto mb-3 text-dark">
-                            <p>I'm a skilled web developer and media designer who has been working with Adobe's Creative Suite for over 10 years, including a Bachelor's degree in Audio Visual Media from Hochschule der Medien in Stuttgart.</p>
+                            <p>I'm a skilled web developer and media designer based in Berlin, who has been working with Adobe's Creative Suite for over 10 years, including a Bachelor's degree in Audio Visual Media from Hochschule der Medien in Stuttgart.</p>
                             <p>Recently I expanded my repertoire of skills to include state-of-the-art programming languages like React and NextJs.</p>
-                            <p>I everything from websites to exhibition designs and would be happy to help you establish your brand on the market</p>
+                            <p>I create everything from websites to exhibition designs and would be happy to help you establish your brand on the market.</p>
                         </Col>
                     </Row>
                     <Row>
