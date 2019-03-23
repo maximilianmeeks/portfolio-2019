@@ -11,7 +11,7 @@ const Header = () => (
         <Sun id="sun" className="spin-inverse"/>
         <Link href="/">
         <a className="text-decoration-none">
-            <h1 className="text-secondary text-right text-lowercase">Maximilian Meeks</h1>
+            <h2 className="text-secondary text-right text-lowercase">Maximilian Meeks</h2>
             <div className="text-right">
                 <span className="text-primary text-right">Junior Full Stack Web Developer</span>
             </div>
