@@ -126,7 +126,7 @@ class Project extends Component {
             <Fragment> 
                 <Container>
                     <Row>
-                        <Col xs="11" className="mx-auto mb-4 text-center">
+                        <Col xs="12" className="mx-auto mb-4 text-center">
                             <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
                                 {({loading, data: {previousProject, nextProject}}) => {
                                     if (loading) return <Loading/>
@@ -141,24 +141,24 @@ class Project extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="11" className="mx-auto text-right">
+                        <Col xs="12" className="mx-auto text-right">
                             <h1 className="text-primary mx-auto font-weight-light">{projects[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="11" className="mx-auto mb-4 text-right">
+                        <Col xs="12" className="mx-auto mb-4 text-right">
                             <span className="text-secondary mx-auto">{projects[0].subheading}</span>
                         </Col>
                     </Row>                   
                     <Row>
-                        <Col xs="11" className="mx-auto">
+                        <Col xs="12" className="mx-auto">
                             <img className="img-fluid border d-md-none" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
                             <img className="img-fluid border d-none d-md-block mb-md-4" src={`https://media.graphcms.com/resize=width:1000/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
                         </Col>
 
                     </Row>
                     <Row>
-                        <Col xs="11" className="mx-auto">
+                        <Col xs="12" className="mx-auto">
                             <Row>
                                 <Col xs="12" md="9" className="mx-auto my-3">
                                     <p>{projects[0].description}</p>
@@ -202,7 +202,7 @@ class Project extends Component {
                         {image3Handler(projects[0])}
                     </Row>
                     <Row className="mt-4">
-                        <Col xs="11" className="mx-auto d-md-none">
+                        <Col xs="12" className="mx-auto d-md-none">
                             <Row>
                                 <Col xs="6">
                                 <h5 >Categories</h5>

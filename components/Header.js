@@ -6,15 +6,15 @@ import Sun from "../svgs/circle.svg";
 
 const Header = () => (
     
-    <Container className="bg-light">
+    <Container className="bg-light pt-3 position-relative">
 {/*         <Spirale id="header-icon" className="spin"/>
         <Sun id="sun" className="spin-inverse"/> */}
-        <img src="/static/portfolio_bock.png" alt="" className="header-bock"/>
+        <img src="/static/portfolio_bock.png" alt="" className="header-bock position-absolute"/>
         <Link href="/">
         <a className="text-decoration-none">
-            <h2 className="text-secondary text-right text-lowercase mt-3">Maximilian Meeks</h2>
+            <h2 className="text-primary text-right text-lowercase">Maximilian Meeks</h2>
             <div className="text-right">
-                <span className="text-primary text-right">Junior Full Stack Web Developer</span>
+                <span className="text-secondary text-right">Junior Full Stack Web Developer</span>
             </div>
         </a>
         </Link>
