@@ -169,19 +169,26 @@ body{
     margin-right: 0.7rem;
 
     &:hover{
-        color: darken($color: $secondary, $amount: 5)
+        color: darken($color: $secondary, $amount: 10)
     }
     &:focus{
-        color: darken($color: $secondary, $amount: 5)
+        color: darken($color: $secondary, $amount: 10)
     }
     &:active{
-        color: darken($color: $secondary, $amount: 5)
+        color: darken($color: $secondary, $amount: 10)
     }
 }
 
-.project-title{
-    background-color: rgba($color: #000000, $alpha: 0.3)
+.title-box{
+    background-color: rgba($color: $dark, $alpha: 0.6);
+    bottom: 10%;
+    color: $light;
+
+    &:hover{
+        background-color: rgba($color: $dark, $alpha: 0.9);
+    }
 }
+
 
 /* .filter-button{
     background-color: $secondary;
