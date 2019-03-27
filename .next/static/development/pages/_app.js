@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\_app.js"],{
 
 /***/ "./lib/init-apollo.js":
 /*!****************************!*\
@@ -86,7 +86,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/dci/Development/portfolio-2019/lib/with-apollo-client.js";
+var _jsxFileName = "E:\\Bibliotheken\\Development\\portfolio-2019\\lib\\with-apollo-client.js";
 
 
 
@@ -44683,7 +44683,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/dci/Development/portfolio-2019/pages/_app.js";
+var _jsxFileName = "E:\\Bibliotheken\\Development\\portfolio-2019\\pages\\_app.js";
 
 
 
