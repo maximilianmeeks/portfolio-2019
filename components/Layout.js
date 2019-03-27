@@ -22,6 +22,14 @@ function headerHandler (props) {
     }
 }
 
+function footerHandler (props) {
+    if (props.footer===true){
+        return  <Footer/>
+    } else {
+        return null
+    }
+}
+
 function menuHandler (props) {
     if (props.menu===true){
         return <Menu/>
@@ -57,7 +65,7 @@ class Layout extends Component {
                             </Col>
                         </Row>
                     </Container>
-                    <Footer/>
+                    {footerHandler(this.props)}
                 </Container>
                 
                 

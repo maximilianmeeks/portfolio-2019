@@ -53,7 +53,7 @@ app.prepare().then(function() {
   })
 
   server.post('/send', (req, res) => {
-        const output = `
+/*         const output = `
           <h3>Kontaktanfrage über dein Portfolio</h3>
           <h4>Kontaktdaten:</h4>
           <p>Name: ${req.body.name}</p>
@@ -61,7 +61,8 @@ app.prepare().then(function() {
           <p>Nachricht: ${req.body.text}</p>
           <p>🙋</p>
         `;
-        res.send(helper(output));
+        res.send(helper(output)); */
+        return app.render(req, res, '/contact')
   })
 
   server.listen(port, function(err) {

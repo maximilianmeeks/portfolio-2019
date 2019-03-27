@@ -5,7 +5,7 @@
 /* @import "../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min" */;
 
 body{
-    background-color:rgb(255, 244, 209);
+    background-color:#fff4d1;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -136,6 +136,9 @@ body{
         height: 600px;
     }
 }
+.object-fit-cover{
+    object-fit: cover;
+}
 
 .btn-filter-text{
     color: $light;
@@ -163,7 +166,17 @@ body{
 
 .portfolio-link{
     color: $secondary;
-    margin-right: 1rem;
+    margin-right: 0.7rem;
+
+    &:hover{
+        color: darken($color: $secondary, $amount: 5)
+    }
+    &:focus{
+        color: darken($color: $secondary, $amount: 5)
+    }
+    &:active{
+        color: darken($color: $secondary, $amount: 5)
+    }
 }
 
 /* .filter-button{
