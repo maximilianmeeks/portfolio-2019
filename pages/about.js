@@ -25,7 +25,7 @@ export default class extends Component{
                         <Col xs="12" md="8" lg="6" className="mx-auto mb-3">
                         <Container>
                             <Row className="my-3">
-                                <h2 className="text-secondary text-lowercase">Technologies I use</h2>
+                                <h2 className="text-secondary text-lowercase">Technologies</h2>
                             </Row>
                             <Row>
                                 <Col xs="3"  className="d-flex justify-content-center align-content-center mb-5">

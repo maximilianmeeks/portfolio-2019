@@ -6,6 +6,7 @@
 
 body{
     background-color:rgb(255, 244, 209);
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -158,6 +159,11 @@ body{
     left: 0;
     top: 0;
 
+}
+
+.portfolio-link{
+    color: $secondary;
+    margin-right: 1rem;
 }
 
 /* .filter-button{
