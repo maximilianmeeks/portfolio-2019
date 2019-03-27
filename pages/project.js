@@ -81,6 +81,14 @@ const enums = {
     Graphic_Design:"Graphic Design"
 }
 
+const queries = {
+    Development: "development",
+    Graphic_Design: "graphic-design",
+    Illustration: "illustration",
+    Layout: "layout",
+    Lighting: "lighting"
+}
+
 function image2Handler (props) {
     if (props.image2 != null) {
        return <Col xs="11" md="6" className="mx-auto">
@@ -187,8 +195,10 @@ class Project extends Component {
                                         
                                         {projects[0].categories.map((category, index) => (
                                             <ul className="text-secondary list-group list-group-flush text-right">
-                                                <Link prefetch href={{pathname: '/work', query: {category: enums[category.toString().toLowerCase()]}}}>
-                                                    <li key={index} className="list-group-item bg-light pr-0">{enums[category.toString()]}</li>
+                                                <Link prefetch href={{pathname: '/work', query: {category: queries[category.toString()]}}}>
+                                                    <a className="text-secondary text-decoration-none">
+                                                        <li key={index} className="list-group-item bg-light pr-0">{enums[category.toString()]}</li>
+                                                    </a>
                                                 </Link>
                                             </ul>
                                         ))}  
