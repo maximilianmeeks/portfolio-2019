@@ -180,15 +180,28 @@ body{
 }
 
 .title-box{
-    background-color: rgba($color: $dark, $alpha: 0.6);
-    bottom: 10%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: $primary;
     color: $light;
+    width: 100%;
+    height: 100%;
+    -webkit-transition:visibility 0.2s ease-in; 
+    -webkit-transition:opacity 0.2s ease-in; 
 
-    &:hover{
-        background-color: rgba($color: $dark, $alpha: 0.9);
-    }
 }
 
+.card:hover .title-box{
+        visibility: visible;
+        opacity: 1;
+    
+}
+
+.card-text{
+    position: absolute;
+    bottom: 10%;
+    left: 10%
+}
 
 /* .filter-button{
     background-color: $secondary;

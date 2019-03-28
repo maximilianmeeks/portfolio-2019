@@ -7911,7 +7911,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "E:\\Bibliotheken\\Development\\portfolio-2019\\.next");
+      source_map_support_1.rewriteStacktrace(error, "/home/dci/Development/portfolio-2019/.next");
       return error;
     }
   };
@@ -19113,7 +19113,7 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Bibliotheken\Development\portfolio-2019\node_modules\next\dist\client\next-dev */"./node_modules/next/dist/client/next-dev.js");
+module.exports = __webpack_require__(/*! /home/dci/Development/portfolio-2019/node_modules/next/dist/client/next-dev */"./node_modules/next/dist/client/next-dev.js");
 
 
 /***/ }),

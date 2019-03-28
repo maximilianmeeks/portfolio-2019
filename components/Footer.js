@@ -19,7 +19,7 @@ const Footer = () => (
                 </Link>
                 <Link href="mailto:maximilian.meeks@gmail.com" target="_blank">
                     <a>
-                        <i class="portfolio-link fas fa-envelope fa-2x"></i>
+                        <i className="portfolio-link fas fa-envelope fa-2x"></i>
                     </a>
                 </Link>
                 
