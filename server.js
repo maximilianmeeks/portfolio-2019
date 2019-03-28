@@ -56,8 +56,9 @@ app.prepare().then(function() {
             <p>🙋</p>
           `; 
           console.log(output);
-          res.send(helper(output)); 
-          return app.render(req, res, '/contact')
+          helper(output);
+          res.sendStatus("200");
+          
     })
 
   server.listen(port, function(err) {

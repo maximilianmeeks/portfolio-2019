@@ -64,8 +64,6 @@ class ProjectList extends Component {
                             ))}
                         </Row>
                     </Fragment>
-
-
                     );
                 }}
                 </Query>
