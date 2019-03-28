@@ -46,19 +46,19 @@ app.prepare().then(function() {
     return app.render(req, res, '/work', { slug: req.params.slug })
   })
 
-server.post('/send', (req, res) => {
-         const output = `
-          <h3>Kontaktanfrage über dein Portfolio</h3>
-          <h4>Kontaktdaten:</h4>
-          <p>Name: ${req.body.name}</p>
-          <p>E-Mail: ${req.body.email}</p>
-          <p>Nachricht: ${req.body.text}</p>
-          <p>🙋</p>
-        `; 
-        console.log(output);
-        res.send(helper(output)); 
-        return app.render(req, res, '/contact')
-  })
+  server.post('/send', (req, res) => {
+          const output = `
+            <h3>Kontaktanfrage über dein Portfolio</h3>
+            <h4>Kontaktdaten:</h4>
+            <p>Name: ${req.body.name}</p>
+            <p>E-Mail: ${req.body.email}</p>
+            <p>Nachricht: ${req.body.text}</p>
+            <p>🙋</p>
+          `; 
+          console.log(output);
+          res.send(helper(output)); 
+          return app.render(req, res, '/contact')
+    })
 
   server.listen(port, function(err) {
     if (err) {

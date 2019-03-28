@@ -52,12 +52,12 @@ class ProjectList extends Component {
                             
                                 <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}}>
                                     <a>
-                                    <Card className="mb-4 card">
-                                        <div className="title-box position-absolute w-100 rounded">
-                                            <p className="text-center pt-3 card-text">{project.title}</p>
-                                        </div>
-                                        <CardImg top className="object-fit-cover rounded" width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
-                                    </Card>
+                                        <Card className="mb-4 card">
+                                            <div className="title-box position-absolute w-100 rounded">
+                                                <p className="pt-3 card-text">{project.title}</p>
+                                            </div>
+                                            <CardImg top className="object-fit-cover rounded" width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
+                                        </Card>
                                     </a>
                                 </Link>
                             </Col>

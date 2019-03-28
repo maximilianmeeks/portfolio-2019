@@ -2,9 +2,10 @@
   
     "version": 2,
     "builds": [
-      { "src": "package.json", "use": "@now/next" }
-  ],
-    "routes": [
-      { "src": "/project/(?<slug>[^/]+)$", "dest": "/project?slug=$slug" }
-    ]
+      { "src": "package.json", "use": "@now/next" },
+      {
+        "src": "server.js",
+        "use": "@now/node-server"
+      }   
+  ]
   }

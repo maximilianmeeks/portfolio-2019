@@ -2,7 +2,7 @@
 import Layout from '../components/Layout';
 import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
 import React, { Component } from "react";
-import axios from "axios";
+
 
 
 export default class extends Component{
@@ -12,7 +12,7 @@ export default class extends Component{
             <Layout header={true} menu={true} footer={true}>
                 <Container className="vh-100">
                     
-                    <Form id="contact-form" /* onSubmit={this.handleSubmit.bind(this)} */ action="/send" method="POST">
+                    <Form id="contact-form" action="/send" method="POST">
                         <Row>
                             <Col md="8" lg="6" className="mx-auto mt-3">
                                 <h1 className="mb-4 text-primary text-lowercase">Contact me</h1>
