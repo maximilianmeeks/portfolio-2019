@@ -73,7 +73,7 @@ export default class extends Component{
                                         <Input type="textarea" name="text" id="message" placeholder="Message (max. 1000 characters)" maxLength="1000" required/>
                                     </FormGroup>
                                     <Row>
-                                        <Col xs="9">
+                                        <Col xs="8">
                                             {this.state.success ? 
                                             <Alert color="success">
                                             Success!
