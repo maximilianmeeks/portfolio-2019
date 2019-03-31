@@ -91,9 +91,9 @@ const queries = {
 
 function image2Handler (props) {
     if (props.image2 != null) {
-       return <Col xs="11" md="6" className="mx-auto">
-                    <img className="img-fluid mb-3 border d-md-none" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
-                    <img className="img-fluid mb-3 border d-none d-md-block" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
+       return <Col xs="12" md="6" className="mx-auto">
+                    <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
+                    <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
                 </Col>
             
     } 
@@ -101,9 +101,9 @@ function image2Handler (props) {
 
 function image3Handler (props) {
     if (props.image3 != null) {
-        return <Col xs="11" md="6" className="mx-auto">
-                     <img className="img-fluid mb-3 border d-md-none" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
-                     <img className="img-fluid mb-3 border d-none d-md-block" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
+        return <Col xs="12" md="6" className="mx-auto">
+                     <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
+                     <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
                 </Col>
              
              } else {
@@ -160,8 +160,8 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="12" className="mx-auto">
-                            <img className="img-fluid border d-md-none" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
-                            <img className="img-fluid border d-none d-md-block mb-md-4" src={`https://media.graphcms.com/resize=width:1000/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
+                            <img className="img-fluid border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
+                            <img className="img-fluid border d-none d-md-block mb-md-4 rounded" src={`https://media.graphcms.com/resize=width:1000/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
                         </Col>
 
                     </Row>

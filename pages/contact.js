@@ -1,18 +1,61 @@
 
 import Layout from '../components/Layout';
-import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Alert, Container, Row, Col } from 'reactstrap';
 import React, { Component } from "react";
+import fetch from 'isomorphic-unfetch';
 
 
+function queryHandler (props) {
+
+    if (props.status==="success"){
+        return <Alert color="success">
+                    Success!
+                </Alert>
+    } else {
+        return null
+    }
+}
 
 export default class extends Component{
+    static getInitialProps({query}) {
+        const isServer = typeof window === "undefined";
+        return {isServer, query};
+    }
+
+    submitComments(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value
+
+        const data = {
+            name: name,
+            email: email,
+            message: message
+        }
+
+        fetch(`https://portfolio-server.maximilianmeeks.now.sh/send` /* "http://localhost:3333/send" */, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+          }).then((res)=>{
+              res.json().then(json => {
+                  console.log(json.message)
+              })
+          })
+    }
 
     render(){
+    const {query} = this.props 
+     
         return(
             <Layout header={true} menu={true} footer={true}>
                 <Container className="vh-100">
                     
-                    <Form id="contact-form" action="/send" method="POST">
+                    <Form id="contact-form" onSubmit={(e)=> this.submitComments(e)} >
                         <Row>
                             <Col md="8" lg="6" className="mx-auto mt-3">
                                 <h1 className="mb-4 text-primary text-lowercase">Contact me</h1>
@@ -28,7 +71,16 @@ export default class extends Component{
                                         <Label for="message" className="sr-only">Name</Label>
                                         <Input type="textarea" name="text" id="message" placeholder="Message (max. 1000 characters)" maxLength="1000"/>
                                     </FormGroup>
-                                <Button className="text-light float-right mb-5" type="submit">Submit</Button> 
+                                    <Row>
+                                        <Col xs="9">
+                                            {queryHandler(query)}
+                                        </Col>
+                                        <Col xs="3" className="ml-auto">
+                                            <Button className="text-light btn-lg float-right mb-5" type="submit">Submit</Button> 
+                                        </Col>
+                                    </Row>
+
+                                    
                             </Col>
                         </Row>
                     </Form>  

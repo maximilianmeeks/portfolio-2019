@@ -28,27 +28,26 @@ export default class extends Component{
                                 <h2 className="text-secondary text-lowercase">Technologies</h2>
                             </Row>
                             <Row>
-                                <Col xs="3"  className="d-flex justify-content-center align-content-center mb-5">
-                                    <i className="fab fa-html5 fa-3x text-primary"></i>
-                                <span>HTML 5</span>
+                                <Col xs="2"  className="d-flex justify-content-center align-content-center mb-5">
+                                    <i className="fab fa-html5 fa-2x text-primary"></i>
                                 </Col>
-                                <Col xs="3"  className="mb-5">
-                                    <i className="fab fa-css3-alt fa-3x text-primary"></i>
+                                <Col xs="2"  className="mb-5">
+                                    <i className="fab fa-css3-alt fa-2x text-primary"></i>
                                 </Col>
-                                <Col xs="3"  className="mb-5">
-                                    <i className="fab fa-js fa-3x text-primary"></i>
+                                <Col xs="2"  className="mb-5">
+                                    <i className="fab fa-js fa-2x text-primary"></i>
                                 </Col>
-                                <Col xs="3"  className="mb-5">
-                                    <i className="fab fa-react fa-3x text-primary"></i>
+                                <Col xs="2"  className="mb-5">
+                                    <i className="fab fa-react fa-2x text-primary"></i>
                                 </Col>
-                                <Col xs="3"  className="mb-5">
-                                    <i className="fab fa-node fa-3x text-primary"></i>
+                                <Col xs="2"  className="mb-5">
+                                    <i className="fab fa-node fa-2x text-primary"></i>
                                 </Col>
-                                <Col xs="3"  className="mb-5">
-                                    <i className="fas fa-database fa-3x text-primary"></i>
+                                <Col xs="2"  className="mb-5">
+                                    <i className="fas fa-database fa-2x text-primary"></i>
                                 </Col>
-                                <Col xs="3"  className="mb-5">
-                                    <i className="fab fa-adobe fa-3x text-primary"></i>
+                                <Col xs="2"  className="mb-5">
+                                    <i className="fab fa-adobe fa-2x text-primary"></i>
                                 </Col>
                             </Row>
                             </Container>

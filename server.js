@@ -33,7 +33,6 @@ app.prepare().then(function() {
     return app.render(req, res, '/contact')
   })
 
-
   server.get('/project:slug', (req, res) => {
     const queryParams = {
       slug: req.params.slug,
@@ -55,10 +54,10 @@ app.prepare().then(function() {
             <p>Nachricht: ${req.body.text}</p>
             <p>🙋</p>
           `; 
-          console.log(output);
           helper(output);
-          res.sendStatus("200");
-          
+          /* res.redirect(200, "/contact"); */
+
+          res.redirect("/contact?status=success")
     })
 
   server.listen(port, function(err) {

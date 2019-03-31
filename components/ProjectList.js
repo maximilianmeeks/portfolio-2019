@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-import { Card, CardImg, Row, Col } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, Row, Col } from "reactstrap";
 import Link from "next/link";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -52,11 +52,16 @@ class ProjectList extends Component {
                             
                                 <Link prefetch href={{pathname: '/project', query: {slug: project.slug}}}>
                                     <a>
-                                        <Card className="mb-4 card">
+                                        <Card className="mb-1 mb-lg-4 card border-0">
                                             <div className="title-box position-absolute w-100 rounded">
                                                 <p className="pt-3 card-text">{project.title}</p>
                                             </div>
-                                            <CardImg top className="object-fit-cover rounded" width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
+                                            <CardImg top className="object-fit-cover card-img rounded" width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
+                                            <CardBody className="d-lg-none bg-light card-body rounded-bottom">
+                                                <CardTitle className="text-secondary">
+                                                    <p className="text-decoration-none text-right card-title">{project.title}</p>
+                                                </CardTitle>
+                                            </CardBody>
                                         </Card>
                                     </a>
                                 </Link>
