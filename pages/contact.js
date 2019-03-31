@@ -5,18 +5,13 @@ import React, { Component } from "react";
 import fetch from 'isomorphic-unfetch';
 
 
-function queryHandler (props) {
-
-    if (props.status==="success"){
-        return <Alert color="success">
-                    Success!
-                </Alert>
-    } else {
-        return null
-    }
-}
-
 export default class extends Component{
+    constructor(){
+        super();
+        this.state = {
+            success: false
+        }
+    }
     static getInitialProps({query}) {
         const isServer = typeof window === "undefined";
         return {isServer, query};
@@ -27,6 +22,7 @@ export default class extends Component{
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value
+        const contactForm = document.getElementById('contact-form')
 
         const data = {
             name: name,
@@ -42,11 +38,16 @@ export default class extends Component{
               'Content-Type': 'application/json'
             }
           }).then((res)=>{
-              res.json().then(json => {
-                  console.log(json.message)
+              res.json().then(res => {
+                  if (res.status === 200){
+                      this.setState({success: true});
+                      contactForm.reset()
+                  }
               })
           })
     }
+
+
 
     render(){
     const {query} = this.props 
@@ -61,19 +62,22 @@ export default class extends Component{
                                 <h1 className="mb-4 text-primary text-lowercase">Contact me</h1>
                                     <FormGroup>
                                         <Label for="name" className="sr-only" maxLength="50">Name</Label>
-                                        <Input type="text" name="name" id="name" placeholder="Name" />
+                                        <Input type="text" name="name" id="name" placeholder="Name" required/>
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="email" className="sr-only" maxLength="254">Email</Label>
-                                        <Input type="email" name="email" id="email" placeholder="E-Mail" />
+                                        <Input type="email" name="email" id="email" placeholder="E-Mail" required/>
                                     </FormGroup>
                                     <FormGroup className="mb-5">
                                         <Label for="message" className="sr-only">Name</Label>
-                                        <Input type="textarea" name="text" id="message" placeholder="Message (max. 1000 characters)" maxLength="1000"/>
+                                        <Input type="textarea" name="text" id="message" placeholder="Message (max. 1000 characters)" maxLength="1000" required/>
                                     </FormGroup>
                                     <Row>
                                         <Col xs="9">
-                                            {queryHandler(query)}
+                                            {this.state.success ? 
+                                            <Alert color="success">
+                                            Success!
+                                            </Alert> : null}
                                         </Col>
                                         <Col xs="3" className="ml-auto">
                                             <Button className="text-light btn-lg float-right mb-5" type="submit">Submit</Button> 
