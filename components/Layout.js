@@ -12,37 +12,36 @@ import {
         Col,
         Row} from 'reactstrap';
 
-function headerHandler (props) {
-    if (props.header===true){
-        return  <Link href="/">
-                    <Header/>
-                </Link>
-    } else {
-        return null
-    }
-}
-
-function footerHandler (props) {
-    if (props.footer===true){
-        return  <Footer/>
-    } else {
-        return null
-    }
-}
-
-function menuHandler (props) {
-    if (props.menu===true){
-        return <Menu/>
-        
-    } else {
-        return null
-    }
-}
 
 
 
 class Layout extends Component {
-
+    headerHandler (props) {
+        if (props.header===true){
+            return  <Link href="/">
+                        <Header/>
+                    </Link>
+        } else {
+            return null
+        }
+    }
+    
+    footerHandler (props) {
+        if (props.footer===true){
+            return  <Footer/>
+        } else {
+            return null
+        }
+    }
+    
+    menuHandler (props) {
+        if (props.menu===true){
+            return <Menu/>
+            
+        } else {
+            return null
+        }
+    }
     render() {
         
         return(

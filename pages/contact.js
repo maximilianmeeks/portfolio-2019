@@ -70,7 +70,7 @@ export default class extends Component{
                                     </FormGroup>
                                     <FormGroup className="mb-5">
                                         <Label for="message" className="sr-only">Name</Label>
-                                        <Input type="textarea" name="text" id="message" placeholder="Message (max. 1000 characters)" maxLength="1000" required/>
+                                        <Input type="textarea" name="message" id="message" placeholder="Message (max. 1000 characters)" maxLength="1000" required/>
                                     </FormGroup>
                                     <Row>
                                         <Col xs="8">
