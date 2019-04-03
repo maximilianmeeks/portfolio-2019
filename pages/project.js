@@ -91,7 +91,7 @@ const queries = {
 
 function image2Handler (props) {
     if (props.image2 != null) {
-       return <Col xs="12" md="6" className="mx-auto">
+       return <Col xs="12" md="5" className="mx-auto">
                     <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
                     <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
                 </Col>
@@ -101,7 +101,7 @@ function image2Handler (props) {
 
 function image3Handler (props) {
     if (props.image3 != null) {
-        return <Col xs="12" md="6" className="mx-auto">
+        return <Col xs="12" md="5" className="mx-auto">
                      <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
                      <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
                 </Col>
@@ -120,7 +120,7 @@ class Project extends Component {
     render(){
     const {query} = this.props    
     return(
-        <Layout header={true} menu={true}>
+        <Layout header={true} menu={true} footer={true}>
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
             {({ loading, error, data:{projects} }) => {
             if (loading) return <div className="container">
@@ -149,26 +149,30 @@ class Project extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="12" className="mx-auto text-right">
+                        <Col xs="12" md="6" className="mx-auto text-right">
                             <h1 className="text-primary mx-auto font-weight-light">{projects[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="12" className="mx-auto mb-4 text-right">
+                        <Col xs="12" md="6" className="mx-auto mb-4 text-right">
                             <span className="text-secondary mx-auto">{projects[0].subheading}</span>
                         </Col>
                     </Row>                   
                     <Row>
                         <Col xs="12" className="mx-auto">
                             <img className="img-fluid border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
-                            <img className="img-fluid border d-none d-md-block mb-md-4 rounded" src={`https://media.graphcms.com/resize=width:1000/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
                         </Col>
 
                     </Row>
                     <Row>
-                        <Col xs="12" className="mx-auto">
+                        <Col xs="12" className="mx-auto mb-md-5">
                             <Row>
-                                <Col xs="12" md="9" className="mx-auto my-3">
+                                <Col md="6" className="mx-auto">
+                                    <img className="img-fluid border d-none d-md-block mb-md-4 rounded" src={`https://media.graphcms.com/resize=width:1000/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs="12" md="6" className="mx-auto my-3">
                                     <p>{projects[0].description}</p>
                                     <p className="text-right">{projects[0].year}</p>
                                     <div className="d-none d-md-block">
@@ -183,33 +187,35 @@ class Project extends Component {
                                         ))}
                                     </div>
                                 </Col>
-                                <Col md="3" className="d-none d-md-block">
-                                    <h5 className="text-right">Technologies</h5>
-                                                    
-                                                    {projects[0].technologies.map((technology, index) => (
-                                                        <ul className="text-secondary list-group list-group-flush text-right">
-                                                            <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
-                                                        </ul>
-                                                    ))}
-                                    <h5 className="text-right mt-5">Categories</h5>
-                                        
-                                        {projects[0].categories.map((category, index) => (
-                                            <ul className="text-secondary list-group list-group-flush text-right">
-                                                <Link prefetch href={{pathname: '/work', query: {category: queries[category.toString()]}}}>
-                                                    <a className="text-secondary text-decoration-none">
-                                                        <li key={index} className="list-group-item bg-light pr-0">{enums[category.toString()]}</li>
-                                                    </a>
-                                                </Link>
-                                            </ul>
-                                        ))}  
-                                </Col>
-                            </Row>
+                                </Row>
+
                         </Col>
 
                     </Row>
                     <Row>
                         {image2Handler(projects[0])}
                         {image3Handler(projects[0])}
+                        <Col md="2" className="d-none d-md-block ml-auto">
+
+                            <h5 className="text-right">Categories</h5>
+                                
+                                {projects[0].categories.map((category, index) => (
+                                    <ul className="text-secondary list-group list-group-flush text-right">
+                                        <Link prefetch href={{pathname: '/work', query: {category: queries[category.toString()]}}}>
+                                            <a className="text-secondary text-decoration-none">
+                                                <li key={index} className="list-group-item bg-light pr-0">{enums[category.toString()]}</li>
+                                            </a>
+                                        </Link>
+                                    </ul>
+                                ))} 
+                            <h5 className="text-right mt-5">Technologies</h5>
+                                            
+                                {projects[0].technologies.map((technology, index) => (
+                                    <ul className="text-secondary list-group list-group-flush text-right">
+                                        <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
+                                    </ul>
+                                ))}              
+                        </Col>
                     </Row>
                     <Row className="mt-4">
                         <Col xs="12" className="mx-auto d-md-none">
@@ -252,21 +258,6 @@ class Project extends Component {
                                     </a>
                                 </Link>
                             ))}
-                        </Col>
-                    </Row>
-                    <Row className="d-none d-md-block mt-5">
-                        <Col xs="11" className="mx-auto mb-4 text-center">
-                            <Query query={PaginationQuery} variables={{projectId: projects[0].id}}>
-                                {({loading, data: {previousProject, nextProject}}) => {
-                                    if (loading) return <Loading/>
-                                    if (error) return <Error/>
-                                    return (
-                                        
-                                        <Pagination previous={previousProject[0]} next={nextProject[0]}/> 
-                                        
-                                    )
-                                }}
-                            </Query>
                         </Col>
                     </Row>
                 </Container>

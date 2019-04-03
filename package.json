@@ -1,10 +1,8 @@
 {
     "scripts": {
-        "start": "NODE_ENV=production node server.js",
-        "dev": "cross-env NODE_ENV=development nodemon server.js",
-        "next": "next",
+        "dev": "next",
         "build": "next build",
-        "now-build": "next build"
+        "start": "next start"
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",

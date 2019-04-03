@@ -54,7 +54,7 @@ export default class extends Component{
      
         return(
             <Layout header={true} menu={true} footer={true}>
-                <Container className="vh-100">
+                <Container className="vh-90">
                     
                     <Form id="contact-form" onSubmit={(e)=> this.submitComments(e)} >
                         <Row>
