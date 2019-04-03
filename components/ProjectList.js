@@ -9,7 +9,8 @@ import Error from "./error";
 
 const allProjects = gql`
   query($category: String){
-      projects(where: {
+      projects(orderBy: year_DESC
+          where: {
           filter_contains: $category
         })  {
           id

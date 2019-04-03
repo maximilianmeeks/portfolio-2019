@@ -10,34 +10,35 @@ import Loading from "../components/loading";
 
 export const allProjectsQuery = gql`
     query($slug: String){
-        projects(where: {slug: $slug}){
-            id
-            title
-            slug
-            subheading
-            description
-            year
-            categories
-            technologies
-            links
-
-            cover{
+        projects(orderBy: year_DESC
+            where: {slug: $slug}){
                 id
-                handle
-                alt
-            }
+                title
+                slug
+                subheading
+                description
+                year
+                categories
+                technologies
+                links
 
-            image2{
-                id
-                handle
-                alt
-            }
+                cover{
+                    id
+                    handle
+                    alt
+                }
 
-            image3{
-                id
-                handle
-                alt
-            }
+                image2{
+                    id
+                    handle
+                    alt
+                }
+
+                image3{
+                    id
+                    handle
+                    alt
+                }
         }
     }
 `
@@ -91,7 +92,7 @@ const queries = {
 
 function image2Handler (props) {
     if (props.image2 != null) {
-       return <Col xs="12" md="5" className="mx-auto">
+       return <Col xs="12" md="6" className="mx-auto">
                     <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
                     <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
                 </Col>
@@ -101,7 +102,7 @@ function image2Handler (props) {
 
 function image3Handler (props) {
     if (props.image3 != null) {
-        return <Col xs="12" md="5" className="mx-auto">
+        return <Col xs="12" md="6" className="mx-auto">
                      <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
                      <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
                 </Col>
@@ -193,32 +194,7 @@ class Project extends Component {
 
                     </Row>
                     <Row>
-                        {image2Handler(projects[0])}
-                        {image3Handler(projects[0])}
-                        <Col md="2" className="d-none d-md-block ml-auto">
-
-                            <h5 className="text-right">Categories</h5>
-                                
-                                {projects[0].categories.map((category, index) => (
-                                    <ul className="text-secondary list-group list-group-flush text-right">
-                                        <Link prefetch href={{pathname: '/work', query: {category: queries[category.toString()]}}}>
-                                            <a className="text-secondary text-decoration-none">
-                                                <li key={index} className="list-group-item bg-light pr-0">{enums[category.toString()]}</li>
-                                            </a>
-                                        </Link>
-                                    </ul>
-                                ))} 
-                            <h5 className="text-right mt-5">Technologies</h5>
-                                            
-                                {projects[0].technologies.map((technology, index) => (
-                                    <ul className="text-secondary list-group list-group-flush text-right">
-                                        <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
-                                    </ul>
-                                ))}              
-                        </Col>
-                    </Row>
-                    <Row className="mt-4">
-                        <Col xs="12" className="mx-auto d-md-none">
+                        <Col xs="12" md="6" className="mx-auto">
                             <Row>
                                 <Col xs="6">
                                 <h5 >Categories</h5>
@@ -259,6 +235,12 @@ class Project extends Component {
                                 </Link>
                             ))}
                         </Col>
+                    </Row>
+                    <Row>
+                        {image2Handler(projects[0])}  
+                    </Row>
+                    <Row>
+                        {image3Handler(projects[0])}
                     </Row>
                 </Container>
             </Fragment>
