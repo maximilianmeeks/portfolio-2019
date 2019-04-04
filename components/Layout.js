@@ -12,38 +12,35 @@ import {
         Col,
         Row} from 'reactstrap';
 
-function headerHandler (props) {
-            if (props.header===true){
-                return  <Link href="/">
-                            <Header/>
-                        </Link>
-            } else {
-                return null
-            }
-        }
-        
-function footerHandler (props) {
-            if (props.footer===true){
-                return  <Footer/>
-            } else {
-                return null
-            }
-        }
-        
-function menuHandler (props) {
-            if (props.menu===true){
-                return <Menu/>
-                
-            } else {
-                return null
-            }
-        }
-
-
 class Layout extends Component {
+    headerHandler (props) {
+        if (props.header===true){
+            return  <Link href="/">
+                        <Header/>
+                    </Link>
+        } else {
+            return null
+        }
+    }
+    
+    menuHandler (props) {
+        if (props.menu===true){
+            return <Menu/>
+            
+        } else {
+            return null
+        }
+    }
 
-    render() {
-        
+    footerHandler (props) {
+        if (props.footer===true){
+            return  <Footer/>
+        } else {
+            return null
+        }
+    }
+
+    render() { 
         return(
             <Fragment>
                 <Head>
@@ -55,8 +52,8 @@ class Layout extends Component {
                 </Head>
                 
                 <Container className="vh-100">
-                    {headerHandler(this.props)}
-                    {menuHandler(this.props)}
+                    {this.headerHandler(this.props)}
+                    {this.menuHandler(this.props)}
                     <Container>
                         <Row>
                             <Col className="bg-light px-0" lg="12">
@@ -64,7 +61,7 @@ class Layout extends Component {
                             </Col>
                         </Row>
                     </Container>
-                    {footerHandler(this.props)}
+                    {this.footerHandler(this.props)}
                 </Container>
                 
                 

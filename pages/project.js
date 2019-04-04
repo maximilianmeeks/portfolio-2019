@@ -173,7 +173,7 @@ class Project extends Component {
                     </Row>
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto">
-                            <h1 className="project-header mx-auto">{projects[0].title}</h1>
+                            <h1 className="custom-header mx-auto">{projects[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
@@ -183,7 +183,7 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="12" className="mx-auto">
-                            <img className="img-fluid border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
+                            <img className="img-fluid border d-md-none rounded bg-white" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
                         </Col>
 
                     </Row>
@@ -191,7 +191,7 @@ class Project extends Component {
                         <Col xs="12" className="mx-auto mb-md-5">
                             <Row>
                                 <Col md="8" lg="6" className="mx-auto">
-                                    <img className="img-fluid border d-none d-md-block mb-md-4 rounded" src={`https://media.graphcms.com/resize=width:600/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
+                                    <img className="img-fluid border d-none d-md-block mb-md-4 rounded bg-white" src={`https://media.graphcms.com/resize=width:600/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
                                 </Col>
                             </Row>
                             <Row>
