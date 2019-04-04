@@ -6,6 +6,7 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Pagination from "../components/pagination";
 import Loading from "../components/loading";
+import marked from "marked";
 
 
 export const allProjectsQuery = gql`
@@ -57,69 +58,74 @@ export const PaginationQuery = gql`
         }
     }
 `
-
-const enums = {
-    Html: "HTML",
-    Css: "CSS / SCSS",
-    JQuery: "jQuery",
-    Javascript: "Javascript",
-    Photoshop: "Adobe Photoshop",
-    Illustrator: "Adobe Illustrator",
-    InDesign: "Adobe InDesign",
-    Vectorworks: "Nemetschek Vectorworks",
-    AfterEffects: "Adobe AfterEffects",
-    MongoDB: "MongoDB",
-    Node_js: "Node.js",
-    React: "React",
-    Next_js: "Next.js",
-    Bootstrap: "Bootstrap 4",
-    Development: "Development",
-    Illustration: "Illustration",
-    Lighting: "Lighting",
-    Layout: "Layout",
-    Motion_Design:"Motion Design",
-    Video_Edition:"Video Editing",
-    Graphic_Design:"Graphic Design"
-}
-
-const queries = {
-    Development: "development",
-    Graphic_Design: "graphic-design",
-    Illustration: "illustration",
-    Layout: "layout",
-    Lighting: "lighting"
-}
-
-function image2Handler (props) {
-    if (props.image2 != null) {
-       return <Col xs="12" md="8" lg="6" className="mx-auto">
-                    <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
-                    <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
-                </Col>
-            
-    } 
-} 
-
-function image3Handler (props) {
-    if (props.image3 != null) {
-        return <Col xs="12" md="8" lg="6" className="mx-auto">
-                     <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
-                     <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
-                </Col>
-             
-             } else {
-        return null
-    }  
-} 
-
 class Project extends Component {
     static getInitialProps({query}) {
         const isServer = typeof window === "undefined";
         return {isServer, query};
     }
 
+    markdownParser (markdown) {
+        const html = marked(markdown)
+        return html
+    }
+
+    image2Handler (props) {
+        if (props.image2 != null) {
+           return <Col xs="12" md="8" lg="6" className="mx-auto">
+                        <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
+                        <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
+                    </Col>
+                
+        } 
+    }
+
+    image3Handler (props) {
+        if (props.image3 != null) {
+            return <Col xs="12" md="8" lg="6" className="mx-auto">
+                         <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
+                         <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
+                    </Col>
+                 
+                 } else {
+            return null
+        }  
+    } 
+
     render(){
     const {query} = this.props    
+
+    const enums = {
+        Html: "HTML",
+        Css: "CSS / SCSS",
+        JQuery: "jQuery",
+        Javascript: "Javascript",
+        Photoshop: "Adobe Photoshop",
+        Illustrator: "Adobe Illustrator",
+        InDesign: "Adobe InDesign",
+        Vectorworks: "Nemetschek Vectorworks",
+        AfterEffects: "Adobe AfterEffects",
+        MongoDB: "MongoDB",
+        Node_js: "Node.js",
+        React: "React",
+        Next_js: "Next.js",
+        Bootstrap: "Bootstrap 4",
+        Development: "Development",
+        Illustration: "Illustration",
+        Lighting: "Lighting",
+        Layout: "Layout",
+        Motion_Design:"Motion Design",
+        Video_Edition:"Video Editing",
+        Graphic_Design:"Graphic Design"
+    }
+
+    const queries = {
+        Development: "development",
+        Graphic_Design: "graphic-design",
+        Illustration: "illustration",
+        Layout: "layout",
+        Lighting: "lighting"
+    }
+
     return(
         <Layout header={true} menu={true} footer={true}>
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
@@ -173,8 +179,8 @@ class Project extends Component {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs="12" md="8" lg="6" className="mx-auto my-3">
-                                    <p>{projects[0].description}</p>
+                                <Col xs="12" md="8" lg="6" className="mx-auto my-3" >
+                                    <div dangerouslySetInnerHTML={{__html: this.markdownParser(`${projects[0].description}`)}} className="description"/>
                                     <p className="text-right">{projects[0].year}</p>
                                     <div className="d-none d-md-block">
                                         {projects[0].links.map((link, index) => (
@@ -237,10 +243,10 @@ class Project extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        {image2Handler(projects[0])}  
+                        {this.image2Handler(projects[0])}  
                     </Row>
                     <Row>
-                        {image3Handler(projects[0])}
+                        {this.image3Handler(projects[0])}
                     </Row>
                 </Container>
             </Fragment>

@@ -222,6 +222,19 @@ body{
 .card-title:hover{
     text-decoration: none;
 }
+
+.description{
+
+    & h2{
+    color: $primary;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    }
+
+    & li{
+        margin-bottom: 0.7rem
+    }
+}
 /* .filter-button{
     background-color: $secondary;
     color: white;
