@@ -119,11 +119,27 @@ class Project extends Component {
     }
 
     const queries = {
+        Html: "html",
+        Css: "css",
+        JQuery: "jquery",
+        Javascript: "javascript",
+        Photoshop: "photoshop",
+        Illustrator: "illustrator",
+        InDesign: "indesign",
+        Vectorworks: "vectorworks",
+        AfterEffects: "aftereffects",
+        MongoDB: "mongodb",
+        Node_js: "node",
+        React: "react",
+        Next_js: "nextjs",
+        Bootstrap: "bootstrap",
         Development: "development",
-        Graphic_Design: "graphic-design",
         Illustration: "illustration",
+        Lighting: "lighting",
         Layout: "layout",
-        Lighting: "lighting"
+        Motion_Design:"motion-design",
+        Video_Edition:"video-editing",
+        Graphic_Design: "graphic-design"
     }
 
     return(
@@ -156,12 +172,12 @@ class Project extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="12" md="8" lg="6" className="mx-auto text-right">
-                            <h1 className="text-primary mx-auto font-weight-light">{projects[0].title}</h1>
+                        <Col xs="12" md="8" lg="6" className="mx-auto">
+                            <h1 className="project-header mx-auto">{projects[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="12" md="8" lg="6" className="mx-auto mb-4 text-right">
+                        <Col xs="12" md="8" lg="6" className="mx-auto mb-4">
                             <span className="text-secondary mx-auto">{projects[0].subheading}</span>
                         </Col>
                     </Row>                   
@@ -180,7 +196,7 @@ class Project extends Component {
                             </Row>
                             <Row>
                                 <Col xs="12" md="8" lg="6" className="mx-auto my-3" >
-                                    <div dangerouslySetInnerHTML={{__html: this.markdownParser(`${projects[0].description}`)}} className="description"/>
+                                    <div dangerouslySetInnerHTML={{__html: this.markdownParser(`${projects[0].description}`)}} className="description text-dark"/>
                                     <p className="text-right">{projects[0].year}</p>
                                     <div className="d-none d-md-block">
                                         {projects[0].links.map((link, index) => (
@@ -203,24 +219,28 @@ class Project extends Component {
                         <Col xs="12" md="8" lg="6" className="mx-auto">
                             <Row>
                                 <Col xs="6" md="4">
-                                <h5 >Categories</h5>
-                            
-                                    {projects[0].categories.map((category, index) => (
-                                        <ul className="text-secondary list-group list-group-flush ">
-                                            <Link prefetch href={{pathname: '/work', query: {category: queries[category.toString()]}}}>
-                                                <a className="text-secondary text-decoration-none">
-                                                    <li key={index} className="list-group-item bg-light pl-0">{enums[category.toString()]}</li>
-                                                </a>
-                                            </Link>
-                                        </ul>
-                                    ))}       
+                                    <h5 className="text-dark">Categories</h5>
+                                
+                                        {projects[0].categories.map((category, index) => (
+                                            <ul className="text-secondary list-group list-group-flush ">
+                                                <Link prefetch href={{pathname: '/work', query: {category: queries[category.toString()]}}}>
+                                                    <a className="text-secondary text-decoration-none">
+                                                        <li key={index} className="list-group-item bg-light pl-0 border-0">{enums[category.toString()]}</li>
+                                                    </a>
+                                                </Link>
+                                            </ul>
+                                        ))}       
                                 </Col>
                                 <Col xs="6" md="4" className="ml-md-auto">
-                                        <h5 className="text-right">Technologies</h5>
+                                        <h5 className="text-right text-dark">Technologies</h5>
                                         
                                             {projects[0].technologies.map((technology, index) => (
                                                 <ul className="text-secondary list-group list-group-flush text-right">
-                                                    <li key={index} className="list-group-item bg-light pr-0">{enums[technology.toString()]}</li>
+                                                    <Link prefetch href={{pathname: '/work', query: {category: queries[technology.toString()]}}}>
+                                                        <a className="text-secondary text-decoration-none">
+                                                            <li key={index} className="list-group-item bg-light pr-0 border-0">{enums[technology.toString()]}</li>
+                                                        </a>
+                                                    </Link>
                                                 </ul>
                                             ))}
                                         

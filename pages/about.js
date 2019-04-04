@@ -10,7 +10,7 @@ export default class extends Component{
                 <Container className="vh-80">
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto my-3">
-                            <h1 className="mb-4 text-primary text-lowercase">About me</h1>
+                            <h1 className="custom-header mb-4 text-lowercase">About me</h1>
 
                         </Col>
                     </Row>

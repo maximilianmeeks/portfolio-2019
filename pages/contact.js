@@ -60,7 +60,7 @@ export default class extends Component{
                     <Form id="contact-form" onSubmit={(e)=> this.submitComments(e)} >
                         <Row>
                             <Col md="8" lg="6" className="mx-auto mt-3">
-                                <h1 className="mb-4 text-primary text-lowercase">Contact me</h1>
+                                <h1 className="custom-header mb-4 text-lowercase">Contact me</h1>
                                     <FormGroup>
                                         <Label for="name" className="sr-only" maxLength="50">Name</Label>
                                         <Input type="text" name="name" id="name" placeholder="Name" required/>

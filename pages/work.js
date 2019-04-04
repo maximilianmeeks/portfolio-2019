@@ -17,7 +17,7 @@ class Works extends React.Component{
                 <Container>
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto my-3">
-                            <h1 className="mb-4 text-primary text-lowercase">My work</h1>
+                            <h1 className="custom-header mb-4 text-lowercase">My work</h1>
                             <Filter/>
                         </Col>
                     </Row>
