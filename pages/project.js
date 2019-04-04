@@ -193,10 +193,10 @@ class Project extends Component {
                         </Col>
 
                     </Row>
-                    <Row>
+                    <Row className="mb-md-5">
                         <Col xs="12" md="6" className="mx-auto">
                             <Row>
-                                <Col xs="6">
+                                <Col xs="6" md="4">
                                 <h5 >Categories</h5>
                             
                                     {projects[0].categories.map((category, index) => (
@@ -209,7 +209,7 @@ class Project extends Component {
                                         </ul>
                                     ))}       
                                 </Col>
-                                <Col xs="6">
+                                <Col xs="6" md="4" className="ml-md-auto">
                                         <h5 className="text-right">Technologies</h5>
                                         
                                             {projects[0].technologies.map((technology, index) => (
