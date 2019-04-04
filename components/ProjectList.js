@@ -57,7 +57,7 @@ class ProjectList extends Component {
                                             <div className="title-box position-absolute w-100 rounded">
                                                 <p className="pt-3 card-text">{project.title}</p>
                                             </div>
-                                            <CardImg top className="object-fit-cover card-img rounded" width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
+                                            <CardImg top className="object-fit-cover card-img border rounded" width="100%" height="250px" src= {`https://media.graphcms.com/resize=width:400/${project.cover.handle}`} alt={project.title} />
                                             <CardBody className="d-lg-none bg-light card-body rounded-bottom">
                                                 <CardTitle className="text-secondary">
                                                     <p className="text-decoration-none text-right card-title">{project.title}</p>
