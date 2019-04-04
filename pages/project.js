@@ -92,7 +92,7 @@ const queries = {
 
 function image2Handler (props) {
     if (props.image2 != null) {
-       return <Col xs="12" md="6" className="mx-auto">
+       return <Col xs="12" md="8" lg="6" className="mx-auto">
                     <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
                     <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
                 </Col>
@@ -102,7 +102,7 @@ function image2Handler (props) {
 
 function image3Handler (props) {
     if (props.image3 != null) {
-        return <Col xs="12" md="6" className="mx-auto">
+        return <Col xs="12" md="8" lg="6" className="mx-auto">
                      <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
                      <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
                 </Col>
@@ -150,12 +150,12 @@ class Project extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="12" md="6" className="mx-auto text-right">
+                        <Col xs="12" md="8" lg="6" className="mx-auto text-right">
                             <h1 className="text-primary mx-auto font-weight-light">{projects[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="12" md="6" className="mx-auto mb-4 text-right">
+                        <Col xs="12" md="8" lg="6" className="mx-auto mb-4 text-right">
                             <span className="text-secondary mx-auto">{projects[0].subheading}</span>
                         </Col>
                     </Row>                   
@@ -168,12 +168,12 @@ class Project extends Component {
                     <Row>
                         <Col xs="12" className="mx-auto mb-md-5">
                             <Row>
-                                <Col md="6" className="mx-auto">
-                                    <img className="img-fluid border d-none d-md-block mb-md-4 rounded" src={`https://media.graphcms.com/resize=width:1000/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
+                                <Col md="8" lg="6" className="mx-auto">
+                                    <img className="img-fluid border d-none d-md-block mb-md-4 rounded" src={`https://media.graphcms.com/resize=width:600/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs="12" md="6" className="mx-auto my-3">
+                                <Col xs="12" md="8" lg="6" className="mx-auto my-3">
                                     <p>{projects[0].description}</p>
                                     <p className="text-right">{projects[0].year}</p>
                                     <div className="d-none d-md-block">
@@ -194,7 +194,7 @@ class Project extends Component {
 
                     </Row>
                     <Row className="mb-md-5">
-                        <Col xs="12" md="6" className="mx-auto">
+                        <Col xs="12" md="8" lg="6" className="mx-auto">
                             <Row>
                                 <Col xs="6" md="4">
                                 <h5 >Categories</h5>
