@@ -161,10 +161,18 @@ body{
 
 }
 
-.header-bock{
-    height: 95px;
+.header-fisch{
+    width: 250%;
     left: 0;
-    top: 0;
+    margin-top: 42px;
+
+    @include media-breakpoint-up(md){
+        width: 150%
+    }
+
+    @include media-breakpoint-up(lg){
+        width: 100%
+    }
 
 }
 
