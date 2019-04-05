@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import { Button, Form, FormGroup, Label, Input, Alert, Container, Row, Col } from 'reactstrap';
 import React, { Component } from "react";
 import fetch from 'isomorphic-unfetch';
+import Bubble from "../svgs/sprechblase.svg";
 
 
 
@@ -55,7 +56,7 @@ export default class extends Component{
      
         return(
             <Layout header={true} menu={true} footer={true}>
-                <Container className="vh-90">
+                <Container>
                     
                     <Form id="contact-form" onSubmit={(e)=> this.submitComments(e)} >
                         <Row>
@@ -75,24 +76,26 @@ export default class extends Component{
                                     </FormGroup>
                                     <Row>
                                         <Col xs="8">
+                                        <Bubble className="sprechblase"/>
                                             {this.state.success ? 
                                             <Alert color="success">
-                                            Success!
+                                                Success!
                                             </Alert> : null}
                                         </Col>
                                         <Col xs="3" className="ml-auto">
-                                            <Button className="text-light btn-lg float-right mb-5" type="submit">Submit</Button> 
+                                            <Button className="text-light btn-lg float-right mb-5" type="submit">
+                                                Submit
+                                            </Button> 
                                         </Col>
                                     </Row>
-
-                                    
                             </Col>
                         </Row>
                     </Form> 
 
                     <Row>
-                        <Col xs="12" md="8" lg="6" className="ml-auto">
-                            <img src="/static/Postfisch.png" alt="" className="w-75" id="postfisch"/>
+                        <Col xs="2" md="4" lg="6"></Col>
+                        <Col xs="10" md="8" lg="6" className="ml-auto">
+                            <img src="/static/Postfisch.png" alt="" className="w-100"/>
                         </Col>    
                     </Row> 
                 </Container>

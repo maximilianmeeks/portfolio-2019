@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "reactstrap";
-import Spirale from "../svgs/portfolio_sonne.svg";
-import Sun from "../svgs/circle.svg";
 
 const Header = () => (
     

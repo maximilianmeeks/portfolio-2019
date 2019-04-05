@@ -242,11 +242,12 @@ body{
     color: $primary;
 }
 
-#postfisch{
-    position: absolute;
-    right: 0
-}
-
 .main-container{
     padding-bottom: 50px
+}
+
+.sprechblase{
+    width: 50%;
+    position: absolute;
+
 }
