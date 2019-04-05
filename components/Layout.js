@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -42,7 +42,7 @@ class Layout extends Component {
 
     render() { 
         return(
-            <html lang="en">
+            <Fragment>
                 <Head>
                     <meta charSet="UTF-8" />
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -67,7 +67,7 @@ class Layout extends Component {
                 </Container>
                 
                 
-            </html>
+            </Fragment>
         )
     }
 }
