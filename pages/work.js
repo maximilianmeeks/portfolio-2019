@@ -13,7 +13,7 @@ class Works extends React.Component{
     render(){
         const {query} = this.props   
         return(
-            <Layout header={true} menu={true} footer={true}>
+            <Layout title="| My Work" header={true} menu={true} footer={true}>
                 <Container>
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto my-3">

@@ -140,7 +140,7 @@ class Project extends Component {
     }
 
     return(
-        <Layout header={true} menu={true} footer={true}>
+        <Layout title="| Project" header={true} menu={true} footer={true}>
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
             {({ loading, error, data:{projects} }) => {
             if (loading) return <div className="container">

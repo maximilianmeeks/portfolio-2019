@@ -6,7 +6,7 @@ import { Container, Row, Col } from "reactstrap";
 export default class extends Component{
     render(){
         return(
-            <Layout header={true} menu={true} footer={true}>
+            <Layout title="| About Me" header={true} menu={true} footer={true}>
                 <Container className="vh-80">
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto my-3">

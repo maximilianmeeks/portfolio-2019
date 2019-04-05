@@ -55,7 +55,7 @@ export default class extends Component{
     const {query} = this.props 
      
         return(
-            <Layout header={true} menu={true} footer={true}>
+            <Layout title="| Contact Me" header={true} menu={true} footer={true}>
                 <Container>
                     
                     <Form id="contact-form" onSubmit={(e)=> this.submitComments(e)} >
