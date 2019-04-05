@@ -76,7 +76,7 @@ export default class extends Component{
                                     </FormGroup>
                                     <Row>
                                         <Col xs="8">
-                                        <Bubble className="sprechblase"/>
+                                        {/* <Bubble className="sprechblase"/> */}
                                             {this.state.success ? 
                                             <Alert color="success">
                                                 Success!
