@@ -14,7 +14,7 @@ const Header = () => (
                     <a className="text-decoration-none">
                         <h2 className="text-primary text-right text-lowercase custom-header">Maximilian Meeks</h2>
                         <div className="text-right">
-                            <span className="text-secondary text-right">Junior Frontend Developer</span>
+                            <span className="text-secondary text-right">Junior Frontend Web Developer</span>
                         </div>
                     </a>
                 </Link>
