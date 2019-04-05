@@ -74,8 +74,7 @@ class Project extends Component {
            return <Col xs="12" md="8" lg="6" className="mx-auto">
                         <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
                         <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
-                    </Col>
-                
+                    </Col>      
         } 
     }
 
@@ -85,11 +84,9 @@ class Project extends Component {
                          <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
                          <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
                     </Col>
-                 
-                 } else {
-            return null
-        }  
-    } 
+        } 
+    }  
+    
 
     render(){
     const {query} = this.props    

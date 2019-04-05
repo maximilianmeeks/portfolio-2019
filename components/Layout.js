@@ -51,7 +51,7 @@ class Layout extends Component {
                     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
                 </Head>
                 
-                <Container className="vh-100">
+                <Container className="vh-100 main-container">
                     {this.headerHandler(this.props)}
                     {this.menuHandler(this.props)}
                     <Container>
