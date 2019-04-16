@@ -6,7 +6,7 @@ import { Container, Row, Col } from "reactstrap";
 export default class extends Component{
     render(){
         return(
-            <Layout title="| About Me" description="Author: Maximilian Meeks | DCI Berlin, Digital Career Institute, 
+            <Layout title="| About Me" description="Maximilian Meeks | DCI Berlin, Digital Career Institute, 
                                                         HdM Stuttgart, Hochschule der Medien, Web Development and Media Design, 
                                                         10 years of experience, Frontend, Backend" 
                                                         header={true} menu={true} footer={true}>
