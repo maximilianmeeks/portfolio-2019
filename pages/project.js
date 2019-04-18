@@ -249,8 +249,8 @@ class Project extends Component {
                             {projects[0].links.map((link, index) => (
                                 <Link key={index} href={link} >      
                                     <a>
-                                        <Button className="text-light" color="primary">
-                                            Website
+                                        <Button className="text-light mx-2 mr-md-3 ml-md-0 text-center" color="primary">
+                                            {link.includes("https://github") ? "Github" : "Website"}
                                         </Button>
                                     </a>
                                 </Link>
