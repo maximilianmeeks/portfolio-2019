@@ -75,8 +75,8 @@ class Project extends Component {
     image2Handler (props) {
         if (props.image2 != null) {
            return <Col xs="12" md="8" lg="6" className="mx-auto mb-3">
-                        <img className="img-fluid border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
-                        <img className="img-fluid border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
+                        <img className="img-fluid border d-md-none mb-1 rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
+                        <img className="img-fluid border d-none d-md-block mb-1 rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
                         <p className="text-right mb-md-3 text-dark image-description">{props.image2.imageDescription}</p>
                     </Col>      
         } 
@@ -85,14 +85,13 @@ class Project extends Component {
     image3Handler (props) {
         if (props.image3 != null) {
             return <Col xs="12" md="8" lg="6" className="mx-auto mb-3">
-                         <img className="img-fluid border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
-                         <img className="img-fluid border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
+                         <img className="img-fluid border d-md-none mb-1 rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
+                         <img className="img-fluid border d-none d-md-block mb-1 rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
                          <p className="text-right mb-md-3 text-dark image-description">{props.image3.imageDescription}</p>
                     </Col>
         } 
     }  
     
-
     render(){
     const {query} = this.props    
 
