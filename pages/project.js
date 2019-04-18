@@ -11,7 +11,7 @@ import marked from "marked";
 
 export const allProjectsQuery = gql`
     query($slug: String){
-        projects(orderBy: year_DESC
+        projects(orderBy: year_DESC,
             where: {slug: $slug}){
                 id
                 title
@@ -27,18 +27,21 @@ export const allProjectsQuery = gql`
                     id
                     handle
                     alt
+                    imageDescription
                 }
 
                 image2{
                     id
                     handle
                     alt
+                    imageDescription
                 }
 
                 image3{
                     id
                     handle
                     alt
+                    imageDescription
                 }
         }
     }
@@ -71,18 +74,20 @@ class Project extends Component {
 
     image2Handler (props) {
         if (props.image2 != null) {
-           return <Col xs="12" md="8" lg="6" className="mx-auto">
-                        <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
-                        <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
+           return <Col xs="12" md="8" lg="6" className="mx-auto mb-3">
+                        <img className="img-fluid border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image2.handle}`} alt={props.image2.alt}/>
+                        <img className="img-fluid border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image2.handle}`} alt={props.image2.alt}/>
+                        <p className="text-right mb-md-3 text-dark image-description">{props.image2.imageDescription}</p>
                     </Col>      
         } 
     }
 
     image3Handler (props) {
         if (props.image3 != null) {
-            return <Col xs="12" md="8" lg="6" className="mx-auto">
-                         <img className="img-fluid mb-3 border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
-                         <img className="img-fluid mb-3 border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
+            return <Col xs="12" md="8" lg="6" className="mx-auto mb-3">
+                         <img className="img-fluid border d-md-none rounded" src={`https://media.graphcms.com/resize=width:400/${props.image3.handle}`} alt={props.image3.alt}/>
+                         <img className="img-fluid border d-none d-md-block rounded" src={`https://media.graphcms.com/resize=width:600/${props.image3.handle}`} alt={props.image3.alt}/>
+                         <p className="text-right mb-md-3 text-dark image-description">{props.image3.imageDescription}</p>
                     </Col>
         } 
     }  
@@ -180,7 +185,8 @@ class Project extends Component {
                     </Row>                   
                     <Row>
                         <Col xs="12" className="mx-auto">
-                            <img className="img-fluid border d-md-none rounded bg-white" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />               
+                            <img className="img-fluid border d-md-none mb-1 rounded bg-white" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />
+                            <p className="d-md-none text-right mb-md-3 text-dark image-description">{projects[0].cover.imageDescription}</p>               
                         </Col>
 
                     </Row>
@@ -188,7 +194,8 @@ class Project extends Component {
                         <Col xs="12" className="mx-auto mb-md-5">
                             <Row>
                                 <Col md="8" lg="6" className="mx-auto">
-                                    <img className="img-fluid border d-none d-md-block mb-md-4 rounded bg-white border" src={`https://media.graphcms.com/resize=width:600/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
+                                    <img className="img-fluid border d-none d-md-block mb-1 rounded bg-white border" src={`https://media.graphcms.com/resize=width:600/${projects[0].cover.handle}`} alt={projects[0].cover.alt}/>
+                                    <p className="d-none d-md-block text-right mb-md-3 text-dark image-description">{projects[0].cover.imageDescription}</p> 
                                 </Col>
                             </Row>
                             <Row>

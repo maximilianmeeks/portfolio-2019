@@ -59,7 +59,9 @@ class Layout extends Component {
                     <Container>
                         <Row>
                             <Col className="bg-light px-0" lg="12">
-                                {this.props.children}
+                                <main>
+                                    {this.props.children}
+                                </main>
                             </Col>
                         </Row>
                     </Container>
