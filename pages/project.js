@@ -3,6 +3,7 @@ import { Container, Row, Col, Button} from "reactstrap";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Link from "next/link";
+import Head from 'next/head';
 import Layout from "../components/Layout";
 import Pagination from "../components/pagination";
 import Loading from "../components/loading";
@@ -155,7 +156,6 @@ class Project extends Component {
             if (error) return <div className="container">
                                     <Error/>
                                 </div>;
-    
             return (
             <Fragment> 
                 <Container>
@@ -165,10 +165,8 @@ class Project extends Component {
                                 {({loading, data: {previousProject, nextProject}}) => {
                                     if (loading) return <Loading/>
                                     if (error) return <Error/>
-                                    return (
-                                        
+                                    return (                                      
                                         <Pagination previous={previousProject[0]} next={nextProject[0]}/> 
-                                        
                                     )
                                 }}
                             </Query>
@@ -176,7 +174,7 @@ class Project extends Component {
                     </Row>
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto">
-                            <h1 className="custom-header mx-auto">{projects[0].title}</h1>
+                            <h1 className="project-header mx-auto">{projects[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
@@ -189,7 +187,6 @@ class Project extends Component {
                             <img className="img-fluid border d-md-none mb-1 rounded bg-white" src={`https://media.graphcms.com/resize=width:400/${projects[0].cover.handle}`} alt={projects[0].cover.alt} />
                             <p className="d-md-none text-right mb-md-3 text-dark image-description">{projects[0].cover.imageDescription}</p>               
                         </Col>
-
                     </Row>
                     <Row>
                         <Col xs="12" className="mx-auto mb-md-5">
@@ -208,7 +205,7 @@ class Project extends Component {
                                             <Link key={index} href={link} >      
                                                 <a>
                                                     <Button className="text-light mx-2 mr-md-3 ml-md-0 text-center" color="primary">
-                                                        {link.includes("https://github") ? "Github" : "Website"}
+                                                        {link.includes("https://github") ? "Github" : link.includes("youtube") ? "YouTube" : "Website"}
                                                     </Button>
                                                 </a>
                                             </Link>
@@ -223,7 +220,6 @@ class Project extends Component {
                             <Row>
                                 <Col xs="6" md="4">
                                     <h5 className="text-dark">Categories</h5>
-                                
                                         {projects[0].categories.map((category, index) => (
                                             <ul className="text-secondary list-group list-group-flush ">
                                                 <Link prefetch href={{pathname: '/work', query: {category: queries[category.toString()]}}}>
@@ -235,30 +231,27 @@ class Project extends Component {
                                         ))}       
                                 </Col>
                                 <Col xs="6" md="4" className="ml-md-auto">
-                                        <h5 className="text-right text-dark">Technologies</h5>
-                                        
-                                            {projects[0].technologies.map((technology, index) => (
-                                                <ul className="text-secondary list-group list-group-flush text-right">
-                                                    <Link prefetch href={{pathname: '/work', query: {category: queries[technology.toString()]}}}>
-                                                        <a className="text-secondary text-decoration-none">
-                                                            <li key={index} className="list-group-item bg-light pr-0 border-0">{enums[technology.toString()]}</li>
-                                                        </a>
-                                                    </Link>
-                                                </ul>
-                                            ))}
-                                        
+                                    <h5 className="text-right text-dark">Technologies</h5>
+                                        {projects[0].technologies.map((technology, index) => (
+                                            <ul className="text-secondary list-group list-group-flush text-right">
+                                                <Link prefetch href={{pathname: '/work', query: {category: queries[technology.toString()]}}}>
+                                                    <a className="text-secondary text-decoration-none">
+                                                        <li key={index} className="list-group-item bg-light pr-0 border-0">{enums[technology.toString()]}</li>
+                                                    </a>
+                                                </Link>
+                                            </ul>
+                                        ))}   
                                 </Col>
                             </Row> 
                         </Col>
                     </Row>
-
                    <Row className="my-4 d-md-none">
                         <Col className="d-flex justify-content-center">
                             {projects[0].links.map((link, index) => (
                                 <Link key={index} href={link} >      
                                     <a>
                                         <Button className="text-light mx-2 mr-md-3 ml-md-0 text-center" color="primary">
-                                            {link.includes("https://github") ? "Github" : "Website"}
+                                            {link.includes("https://github") ? "Github" : link.includes("youtube") ? "YouTube" : "Website"}
                                         </Button>
                                     </a>
                                 </Link>
