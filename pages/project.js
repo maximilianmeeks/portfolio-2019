@@ -105,6 +105,7 @@ class Project extends Component {
         InDesign: "Adobe InDesign",
         Vectorworks: "Nemetschek Vectorworks",
         AfterEffects: "Adobe AfterEffects",
+        Premiere: "Adobe Premiere",
         MongoDB: "MongoDB",
         Node_js: "Node.js",
         React: "React",
@@ -115,7 +116,7 @@ class Project extends Component {
         Lighting: "Lighting",
         Layout: "Layout",
         Motion_Design:"Motion Design",
-        Video_Edition:"Video Editing",
+        Video_Editing:"Video Editing",
         Graphic_Design:"Graphic Design"
     }
 
@@ -129,6 +130,7 @@ class Project extends Component {
         InDesign: "indesign",
         Vectorworks: "vectorworks",
         AfterEffects: "aftereffects",
+        Premiere: "premiere",
         MongoDB: "mongodb",
         Node_js: "node",
         React: "react",
@@ -139,7 +141,7 @@ class Project extends Component {
         Lighting: "lighting",
         Layout: "layout",
         Motion_Design:"motion-design",
-        Video_Edition:"video-editing",
+        Video_Editing:"video-editing",
         Graphic_Design: "graphic-design"
     }
 

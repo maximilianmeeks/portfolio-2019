@@ -68,8 +68,6 @@ class Layout extends Component {
                     </Container>
                     {this.footerHandler(this.props)}
                 </Container>
-                
-                
             </Fragment>
         )
     }
