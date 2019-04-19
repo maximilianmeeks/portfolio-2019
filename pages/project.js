@@ -3,7 +3,6 @@ import { Container, Row, Col, Button} from "reactstrap";
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Link from "next/link";
-import Head from 'next/head';
 import Layout from "../components/Layout";
 import Pagination from "../components/pagination";
 import Loading from "../components/loading";
