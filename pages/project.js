@@ -22,6 +22,7 @@ export const allProjectsQuery = gql`
                 categories
                 technologies
                 links
+                meta
 
                 cover{
                     id
@@ -146,7 +147,7 @@ class Project extends Component {
     }
 
     return(
-        <Layout title="| My Work" header={true} menu={true} footer={true}>
+        <Fragment> 
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
             {({ loading, error, data:{projects} }) => {
             if (loading) return <div className="container">
@@ -156,7 +157,8 @@ class Project extends Component {
                                     <Error/>
                                 </div>;
             return (
-            <Fragment> 
+            
+            <Layout title={`| ${projects[0].title}`} header={true} menu={true} footer={true} description={projects[0].meta}>
                 <Container>
                     <Row>
                         <Col xs="12" className="mx-auto mb-4 text-center">
@@ -264,10 +266,10 @@ class Project extends Component {
                         {this.image3Handler(projects[0])}
                     </Row>
                 </Container>
-            </Fragment>
+            </Layout>
             )}}
         </Query>
-      </Layout>
+      </Fragment>
     ) 
   } 
 }
