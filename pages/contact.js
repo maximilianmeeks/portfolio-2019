@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import { Button, Form, FormGroup, Label, Input, Alert, Container, Row, Col } from 'reactstrap';
 import React, { Component } from "react";
 import fetch from 'isomorphic-unfetch';
-import Bubble from "../svgs/sprechblase.svg";
 
 
 
@@ -32,7 +31,7 @@ export default class extends Component{
             message: message
         }
 
-        fetch(`https://portfolio-server.maximilianmeeks.now.sh/send` /* "http://localhost:3333/send" */, {
+        fetch(`https://portfolio-server.maximilianmeeks.now.sh/send`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -75,8 +74,7 @@ export default class extends Component{
                                     </FormGroup>
                                     <Row>
                                         <Col xs="8">
-                                        {/* <Bubble className="sprechblase"/> */}
-                                            {this.state.success ? 
+                                           {this.state.success ? 
                                             <Alert color="success">
                                                 Success!
                                             </Alert> : null}
