@@ -94,7 +94,7 @@ export default class extends Component{
                     <Row>
                         <Col xs="2" md="4" lg="6"></Col>
                         <Col xs="10" md="8" lg="6" className="ml-auto">
-                            <img src="/static/Postfisch.png" alt="" className="w-100"/>
+                            <img src="" alt="" className="w-100"/>
                         </Col>    
                     </Row> 
                 </Container>

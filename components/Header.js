@@ -7,7 +7,7 @@ const Header = () => (
     <Container className="bg-light pt-3 position-relative">
         <Row>
             <Col xs="2">
-                <img src="/static/headerfisch.png" alt="" className="header-fisch"/>
+                <img src="" alt="" className="header-fisch"/>
             </Col>
             <Col xs="10">
                 <Link href="/">
