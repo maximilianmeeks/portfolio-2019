@@ -97,10 +97,10 @@ class Project extends Component {
     const {query} = this.props    
 
     const enums = {
-        Html: "HTML",
+        Html: "HTML 5",
         Css: "CSS / SCSS",
-        JQuery: "jQuery",
-        Javascript: "Javascript",
+        JQuery: "JQuery",
+        Javascript: "JavaScript",
         Photoshop: "Adobe Photoshop",
         Illustrator: "Adobe Illustrator",
         InDesign: "Adobe InDesign",
