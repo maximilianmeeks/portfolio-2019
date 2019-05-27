@@ -9,7 +9,7 @@ export default class extends Component{
             <Layout title="| About Me" description="Maximilian Meeks | Frontend + Backend Web Developer, DCI Berlin, Digital Career Institute, 
                                                         HdM Stuttgart, Hochschule der Medien, Web Development and Media Design" 
                                                         header={true} menu={true} footer={true}>
-                <Container className="vh-80">
+                <Container>
                     <Row>
                         <Col xs="12" md="8" lg="6" className="mx-auto my-3">
                             <h1 className="custom-header mb-4 text-lowercase">About me</h1>

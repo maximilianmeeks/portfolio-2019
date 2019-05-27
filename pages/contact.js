@@ -31,7 +31,7 @@ export default class extends Component{
             message: message
         }
 
-        fetch(`https://portfolio-server.maximilianmeeks.now.sh/send`, {
+        fetch(`https://portfolio-server.maximilianmeeks.now.sh/`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
