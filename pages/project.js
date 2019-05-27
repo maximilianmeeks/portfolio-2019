@@ -118,7 +118,8 @@ class Project extends Component {
         Layout: "Layout",
         Motion_Design:"Motion Design",
         Video_Editing:"Video Editing",
-        Graphic_Design:"Graphic Design"
+        Graphic_Design:"Graphic Design",
+        PHP: "PHP"
     }
 
     const queries = {
@@ -143,7 +144,8 @@ class Project extends Component {
         Layout: "layout",
         Motion_Design:"motion-design",
         Video_Editing:"video-editing",
-        Graphic_Design: "graphic-design"
+        Graphic_Design: "graphic-design",
+        PHP: "php"
     }
 
     return(
