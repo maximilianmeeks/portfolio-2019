@@ -208,7 +208,7 @@ class Project extends Component {
                                             <Link key={index} href={link} >      
                                                 <a>
                                                     <Button className="text-light mx-2 mr-md-3 ml-md-0 text-center" color="primary">
-                                                        {link.includes("https://github") ? "Github" : link.includes("youtube") ? "YouTube" : "Website"}
+                                                        {link.includes("https://github") ? "GitHub" : link.includes("youtube") ? "YouTube" : "Website"}
                                                     </Button>
                                                 </a>
                                             </Link>
