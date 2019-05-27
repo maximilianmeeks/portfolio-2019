@@ -23,7 +23,11 @@ export default class extends Component{
                             <p>I have created everything from websites to exhibition designs and would be happy help you with your next project!</p>
                         </Col>
                     </Row>
-
+                    <Row>
+                        <Col xs="12" md="8" lg="6" className="mx-auto mb-3">
+                            <img className="w-100" src="static/portrait_web.jpg" alt="Maximilian Meeks - Frontend Developer - Portrait" />
+                        </Col>
+                    </Row>
                 </Container> 
             </Layout>
         )
