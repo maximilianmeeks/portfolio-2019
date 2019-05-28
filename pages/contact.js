@@ -54,7 +54,7 @@ export default class extends Component{
     const {query} = this.props 
      
         return(
-            <Layout title="| Contact Me" description="Maximilian Meeks | Contact Me, Hire me, Frontend Web Developer, Media Designer" header={true} menu={true} footer={true}>
+            <Layout title="Contact Me" description="Maximilian Meeks | Contact Me, Frontend Developer, Media Designer" header={true} menu={true} footer={true}>
                 <Container>
                     <Form id="contact-form" onSubmit={(e)=> this.submitComments(e)} >
                         <Row>

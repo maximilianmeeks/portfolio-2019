@@ -13,7 +13,7 @@ class Works extends React.Component{
     render(){
         const {query} = this.props   
         return(
-            <Layout title="| My Work" description="Author: Maximilian Meeks | My work: Development, Graphic Design, 
+            <Layout title="My Work" description="Author: Maximilian Meeks | My work: Development, Graphic Design, 
                                                     Layouts, Motion Design, Video Editing, Lighting, HTML, CSS, 
                                                     Bootstrap, Adobe Creative Suite, Photoshop, Illustrator, 
                                                     InDesign, After Effects, Premiere" 

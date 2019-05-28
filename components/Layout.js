@@ -51,7 +51,7 @@ class Layout extends Component {
                     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossOrigin="anonymous"/>
                     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
-                    <title>Maximilian Meeks | Frontend Web Developer {this.props.title}</title>
+                    <title>Maximilian Meeks | {this.props.title}</title>
                 </Head>
                 
                 <Container className="vh-100 main-container">

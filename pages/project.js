@@ -149,7 +149,7 @@ class Project extends Component {
     }
 
     return(
-        <Layout title={`| My Work`} header={true} menu={true} footer={true}> 
+        <Layout title={`My Work`} header={true} menu={true} footer={true}> 
             <Query query={allProjectsQuery} variables={{slug: query.slug}} >
             {({ loading, error, data:{projects} }) => {
             if (loading) return <div className="container">
@@ -254,7 +254,7 @@ class Project extends Component {
                                 <Link key={index} href={link} >      
                                     <a>
                                         <Button className="text-light mx-2 mr-md-3 ml-md-0 text-center" color="primary">
-                                            {link.includes("https://github") ? "Github" : link.includes("youtube") ? "YouTube" : "Website"}
+                                            {link.includes("https://github") ? "GitHub" : link.includes("youtube") ? "YouTube" : "Website"}
                                         </Button>
                                     </a>
                                 </Link>
