@@ -8,7 +8,7 @@ const Index = () => (
             <Container className="vh-100">
                 <Row className="h-100 justify-content-center align-items-center">
                     <Col xs="12" className="d-flex justify-content-center align-items-center">
-                        <ul className="list-unstyled">
+                        <ul id="index-list" className="list-unstyled">
                             <li>
                                 <Link href="/about">
                                     <a >about</a>
